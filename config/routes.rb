@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # Routes for the Photo resource:
 
   # CREATE
-  post("/insert_photo", { :controller => "photos", :action => "create" })
+  post("/insert_garment", { :controller => "photos", :action => "create" })
           
   # READ
   get("/garments", { :controller => "photos", :action => "index" })
@@ -12,10 +12,10 @@ Rails.application.routes.draw do
   
   # UPDATE
   
-  post("/modify_photo/:path_id", { :controller => "photos", :action => "update" })
+  post("/modify_garment/:path_id", { :controller => "photos", :action => "update" })
   
   # DELETE
-  get("/delete_photo/:path_id", { :controller => "photos", :action => "destroy" })
+  get("/delete_garment/:path_id", { :controller => "photos", :action => "destroy" })
 
   #------------------------------
 

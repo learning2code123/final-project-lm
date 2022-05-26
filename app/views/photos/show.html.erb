@@ -6,13 +6,13 @@
 
     <div>
       <div>
-        <a href="/photos">
+        <a href="/garments">
           Go back
         </a>
       </div>
 
       <div>
-        <a href="/delete_photo/<%= @the_photo.id %>">
+        <a href="/delete_garment/<%= @the_photo.id %>">
           Delete photo
         </a>
       </div>
@@ -66,7 +66,7 @@
       Edit photo
     </h2>
 
-    <form action="/modify_photo/<%= @the_photo.id %>"  method="post" >
+    <form action="/modify_garment/<%= @the_photo.id %>"  method="post" >
       <div>
         <label for="image_box">
           Image

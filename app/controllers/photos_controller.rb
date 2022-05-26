@@ -25,9 +25,9 @@ class PhotosController < ApplicationController
 
     if the_photo.valid?
       the_photo.save
-      redirect_to("/photos", { :notice => "Photo created successfully." })
+      redirect_to("/garments", { :notice => "Photo created successfully." })
     else
-      redirect_to("/photos", { :alert => the_photo.errors.full_messages.to_sentence })
+      redirect_to("/garments", { :alert => the_photo.errors.full_messages.to_sentence })
     end
   end
 
@@ -41,9 +41,9 @@ class PhotosController < ApplicationController
 
     if the_photo.valid?
       the_photo.save
-      redirect_to("/photos/#{the_photo.id}", { :notice => "Photo updated successfully."} )
+      redirect_to("/garments/#{the_photo.id}", { :notice => "Photo updated successfully."} )
     else
-      redirect_to("/photos/#{the_photo.id}", { :alert => the_photo.errors.full_messages.to_sentence })
+      redirect_to("/garments/#{the_photo.id}", { :alert => the_photo.errors.full_messages.to_sentence })
     end
   end
 
@@ -53,6 +53,6 @@ class PhotosController < ApplicationController
 
     the_photo.destroy
 
-    redirect_to("/photos", { :notice => "Photo deleted successfully."} )
+    redirect_to("/garments", { :notice => "Photo deleted successfully."} )
   end
 end
