@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   post("/insert_photo", { :controller => "photos", :action => "create" })
           
   # READ
-  get("/photos", { :controller => "photos", :action => "index" })
+  get("/garments", { :controller => "photos", :action => "index" })
   
-  get("/photos/:path_id", { :controller => "photos", :action => "show" })
+  get("/garments/:path_id", { :controller => "photos", :action => "show" })
   
   # UPDATE
   
