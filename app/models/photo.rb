@@ -8,6 +8,7 @@
 #  color_g    :integer
 #  color_r    :integer
 #  image      :string
+#  type       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  owner_id   :integer
