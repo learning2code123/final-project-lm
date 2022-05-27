@@ -39,6 +39,13 @@
         <input type="text" id="owner_id_box" name="query_owner_id">
       </div>
 
+        <div>
+        <label for="favcolor">Select your favorite color:</label>
+        <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+        <input type="submit">
+        </div>
+
+
       <button>
         Create photo
       </button>
@@ -50,21 +57,14 @@
 
 <div class="container">
 
- <% @list_of_photos.each do |a_photo| %>
-
   <div class="row">
+  <% @list_of_photos.each do |a_photo| %>
     <div class="col-md-4">
-    <img src="<%= a_photo.image %>">
-    </div>
-    <div class="col-md-4">
-    2
-    </div>
-    <div class="col-md-4">
-    3
-    </div>
+    <img src="<%= a_photo.image %>" class="img-responsive">
   </div>
-</div>
 <% end %>
+</div>
+
 
 <hr>
 <div>
