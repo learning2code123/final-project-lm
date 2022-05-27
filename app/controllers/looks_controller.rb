@@ -1,11 +1,11 @@
-#class LookssController < ApplicationController
-  #def index
+class LooksController < ApplicationController
+  def index
     #matching_photos = Photo.all
 
     #@list_of_photos = matching_photos.order({ :created_at => :desc })
 
     #render({ :template => "photos/index.html.erb" })
-  #end
+  end
 
   #def show
     #the_id = params.fetch("path_id")
@@ -17,19 +17,19 @@
     #render({ :template => "photos/show.html.erb" })
   #end
 
-  #def create
-    #the_photo = Photo.new
+  def create
+    #the_look = Photo.new
     #the_photo.image = params.fetch("query_image")
     #the_photo.caption = params.fetch("query_caption")
     #the_photo.owner_id = params.fetch("query_owner_id")
 
     #if the_photo.valid?
       #the_photo.save
-      #redirect_to("/garments", { :notice => "Photo created successfully." })
+      #redirect_to("/looks", { :notice => "Look created successfully." })
     #else
       #redirect_to("/garments", { :alert => the_photo.errors.full_messages.to_sentence })
     #end
-  #end
+  end
 
   #def update
     #the_id = params.fetch("path_id")
@@ -55,4 +55,4 @@
 
     #redirect_to("/garments", { :notice => "Photo deleted successfully."} )
   #end
-#end
+end

@@ -4,6 +4,9 @@
 #
 #  id         :integer          not null, primary key
 #  caption    :text
+#  color_b    :integer
+#  color_g    :integer
+#  color_r    :integer
 #  image      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
