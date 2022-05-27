@@ -25,7 +25,8 @@ class PhotosController < ApplicationController
 
     if the_photo.valid?
       the_photo.save
-      redirect_to("/garments", { :notice => "Photo created successfully." })
+      #set up the notice in the layout
+      redirect_to("/garments/#{the_photo.id}", { :notice => "Photo created successfully." })
     else
       redirect_to("/garments", { :alert => the_photo.errors.full_messages.to_sentence })
     end

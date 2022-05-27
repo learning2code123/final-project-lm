@@ -1,0 +1,5 @@
+class Looks < ApplicationRecord
+
+  
+
+end
