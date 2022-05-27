@@ -34,15 +34,13 @@ class PhotosController < ApplicationController
 
   def update
 
-    #Parameters: {"favcolor"=>"#131313", "path_id"=>"14"}
-
-
     the_id = params.fetch("path_id")
     the_photo = Photo.where({ :id => the_id }).at(0)
 
     the_photo.image = params.fetch("query_image")
     the_photo.caption = params.fetch("query_caption")
     the_photo.owner_id = params.fetch("query_owner_id")
+    #the_photo.favcolor = params.fetch("favcolor")
 
     if the_photo.valid?
       the_photo.save
@@ -51,6 +49,21 @@ class PhotosController < ApplicationController
       redirect_to("/garments/#{the_photo.id}", { :alert => the_photo.errors.full_messages.to_sentence })
     end
   end
+
+
+  def updated_color
+     #Parameters: {"favcolor"=>"#131313", "path_id"=>"14"}
+
+    the_id = params.fetch("path_id")
+    the_photo = Photo.where({ :id => the_id }).at(0)
+
+    the_photo.hex_code = params.fetch("favcolor")
+
+    the_photo.save
+    
+    redirect_to("/garments/#{the_photo.id}", { :notice => "Color updated successfully."} )
+  end
+  
 
   def destroy
     the_id = params.fetch("path_id")

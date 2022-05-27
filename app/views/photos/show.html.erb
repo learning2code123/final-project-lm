@@ -66,79 +66,53 @@
 </div>
 </div>
 
-    <form>
-        <div>
-        <label for="favcolor">Please indicate the garment's color</label>
-        <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+<div class="container">
+      <div class="row">
+      <div class="col">
+    <form action="/modify_garment_color/<%= @the_photo.id %>">
+      <label for="favcolor">Select your favorite color:</label>
+      <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+      <input type="submit">
+    </form>
+
+        <%# <input type="text" id="image_box" name="query_image" value="<%= @the_photo.image %>
+      </div>
         <%# <input type="submit"><button>Choose color</button>%>
         </div>
-      <button>
+      <button class="btn btn-secondary">
         Choose color
       </button>
       </form>
-
+    </div>
+    
       <%# show the color that was chosen %>
 
-    <div>
-      <div>
-        <a href="/garments">
-          Go back
-        </a>
-      </div>
-
-      <div>
-        <a href="/delete_garment/<%= @the_photo.id %>">
-          Delete photo
-        </a>
-      </div>
-    </div>
-
-    <dl>
-      <dt>
-        Image
-      </dt>
-      <dd>
-        <%= @the_photo.image %>
-      </dd>
-
-      <dt>
-        Caption
-      </dt>
-      <dd>
-        <%= @the_photo.caption %>
-      </dd>
-
-      <dt>
-        Owner
-      </dt>
-      <dd>
-        <%= @the_photo.owner_id %>
-      </dd>
-
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_photo.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_photo.updated_at) %> ago
-      </dd>
-    </dl>
-  </div>
-</div>
-
 <hr>
-
+<div class="col">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Select type
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="/">Bodysuit</a></li>
+        <li><a class="dropdown-item" href="/garments">Dress</a></li>
+        <li><a class="dropdown-item" href="#">Jackets and Coats</a></li>
+        <li><a class="dropdown-item" href="#">Jumpsuit</a></li>
+        <li><a class="dropdown-item" href="#">Pants</a></li>
+        <li><a class="dropdown-item" href="#">Shorts</a></li>
+        <li><a class="dropdown-item" href="#">Skirts</a></li>
+        <li><a class="dropdown-item" href="#">Tops</a></li>
+        <li><a class="dropdown-item" href="#">Vests</a></li>
+      </ul>
+    </div>
+</div>
+</div>
+</div>
 
 <div>
   <div>
     <h2>
-      Edit photo
+      Edit garment
     </h2>
 
     <form action="/modify_garment/<%= @the_photo.id %>"  method="post" >
