@@ -33,6 +33,10 @@ class PhotosController < ApplicationController
   end
 
   def update
+
+    #Parameters: {"favcolor"=>"#131313", "path_id"=>"14"}
+
+
     the_id = params.fetch("path_id")
     the_photo = Photo.where({ :id => the_id }).at(0)
 

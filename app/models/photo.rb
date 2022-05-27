@@ -4,9 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  caption    :text
-#  color_b    :integer
-#  color_g    :integer
-#  color_r    :integer
+#  hex_code   :string
 #  image      :string
 #  type       :string
 #  created_at :datetime         not null

@@ -4,19 +4,80 @@
       Garment #<%= @the_photo.id %> details
     </h1>
 
-    <img src="<%= @the_photo.image %>">
+
+    <div class="container">
+      <div class="row">
+      <div class="col">
+        <img src="<%= @the_photo.image %>">
+      </div>
+    <div class="col">
+    <dl>
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <%= @the_photo.image %>
+      </dd>
+
+      <dt>
+        Caption
+      </dt>
+      <dd>
+        <%= @the_photo.caption %>
+      </dd>
+
+      <dt>
+        Owner
+      </dt>
+      <dd>
+        <%= @the_photo.owner_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_photo.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_photo.updated_at) %> ago
+      </dd>
+
+  <div>
+      <div>
+        <a href="/garments">
+          Go back
+        </a>
+      </div>
+      <div>
+        <a href="/delete_garment/<%= @the_photo.id %>">
+          Delete photo
+        </a>
+        </div>
+      </div>
+    </dl>
+  </div>
+</div>
+</div>
+</div>
+</div>
 
     <form>
         <div>
         <label for="favcolor">Please indicate the garment's color</label>
         <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
-        <input type="submit">
+        <%# <input type="submit"><button>Choose color</button>%>
         </div>
-
       <button>
         Choose color
       </button>
-</form>
+      </form>
+
+      <%# show the color that was chosen %>
 
     <div>
       <div>
