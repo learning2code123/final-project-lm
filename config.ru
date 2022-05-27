@@ -13,3 +13,4 @@ map '/' do
   run Rails.application
 end
 
+require "carrierwave/orm/activerecord"
