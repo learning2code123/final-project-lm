@@ -4,20 +4,7 @@
       Garment #<%= @the_photo.id %> details
     </h1>
 
-    <img src="<%= @the_photo.image %>"
-
-        <form>
-        <div>
-        <label for="favcolor">Select your favorite color:</label>
-        <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
-        <input type="submit">
-        </div>
-
-      <button>
-        Choose color
-      </button>
-      </form>
-
+    <img src="<%= @the_photo.image %>">
 
     <form>
         <div>
@@ -111,11 +98,7 @@
       </div>
 
       <div>
-        <label for="owner_id_box">
-          Owner
-        </label>
-
-        <input type="text" id="owner_id_box" name="query_owner_id" value="<%= @the_photo.owner_id %>">
+        <input type="hidden" id="owner_id_box" name="query_owner_id" value="<%= @the_photo.owner_id %>">
       </div>
 
       <button>
