@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_27_205328) do
+ActiveRecord::Schema.define(version: 2022_05_28_130845) do
+
+  create_table "looks", force: :cascade do |t|
+    t.string "garment_1"
+    t.string "garment_2"
+    t.string "garment_3"
+    t.string "garment_4"
+    t.string "garment_5"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "photos", force: :cascade do |t|
     t.string "image"
