@@ -7,46 +7,53 @@
 </div>
 
 <hr>
-
-<div>
-  <div>
-    <h2>
-      Add a new garment
-    </h2>
-
-    <form action="/insert_garment" method="post" class="form-horizontal" enctype="multipart/form-data">
-      <div>
+        <h2>
+          Add a new garment
+        </h2>
+<p></p>
+<form action="/insert_garment" method="post" class="form-horizontal" enctype="multipart/form-data">
+<div class="container">
+<div class="row align-items-start">
+    <div class="col-1">
         <label for="image_box">
           Image
         </label>
-
+    </div>
+    <div class="col-4">
         <input type="file" id="image_box" name="query_image" class="form-control">
-      </div>
+    </div>
+    <div class="col-1">
+          <label for="caption_box">
+            Name
+          </label>
+    </div>
+    <div class="col-3">
+          <textarea id="caption_box" name="query_caption" rows="1"></textarea>
+    </div>
 
-      <div>
-        <label for="caption_box">
-          Name
-        </label>
-
-        <textarea id="caption_box" name="query_caption" rows="3"></textarea>
-      </div>
-
-      <div>
+      <%# <div>
         <input type="hidden" id="owner_id_box" name="query_owner_id">
-      </div>
+      </div>%>
 
-      <button>
+    <div class="col-3">
+      <button type="button" class="btn btn-primary">
         Upload photo
       </button>
-    </form>
+    </div>
   </div>
 </div>
+</form>
 
 <%# { :notice => "photo uploaded successfuly!" } %>
 <%# { :alert => user.errors.full_messages } %>
 
 
 <%# GRID %>
+
+<hr>
+  <h2>
+  Your Garments
+  </h2>
 
 <div class="container">
   <div class="row">
