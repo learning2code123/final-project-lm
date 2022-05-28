@@ -47,6 +47,13 @@
         <%= time_ago_in_words(@the_photo.updated_at) %> ago
       </dd>
 
+
+      <a href="/insert_looks">
+      <button type="button" class="btn btn-primary">Create a new look using this garment
+      </button>
+      </a>
+  
+
   <div>
       <div>
         <a href="/garments">
@@ -72,7 +79,7 @@
     <form action="/modify_garment_color/<%= @the_photo.id %>">
       <label for="favcolor">Select your favorite color:</label>
       <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
-      <input type="submit">
+      <input type="submit" required>
     </form>
 
         <%# <input type="text" id="image_box" name="query_image" value="<%= @the_photo.image %>

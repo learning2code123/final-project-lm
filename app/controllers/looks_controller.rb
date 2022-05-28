@@ -29,6 +29,9 @@ class LooksController < ApplicationController
     #else
       #redirect_to("/garments", { :alert => the_photo.errors.full_messages.to_sentence })
     #end
+
+    render({ :template => "looks/create.html.erb" })
+
   end
 
   #def update
