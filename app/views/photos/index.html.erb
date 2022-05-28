@@ -11,38 +11,28 @@
           Add a new garment
         </h2>
 <p></p>
+
+<div>
 <form action="/insert_garment" method="post" class="form-horizontal" enctype="multipart/form-data">
-<div class="container">
-<div class="row align-items-start">
-    <div class="col-1">
         <label for="image_box">
           Image
         </label>
-    </div>
-    <div class="col-4">
+          </div>
+          <div>
         <input type="file" id="image_box" name="query_image" class="form-control">
-    </div>
-    <div class="col-1">
           <label for="caption_box">
             Name
           </label>
-    </div>
-    <div class="col-3">
           <textarea id="caption_box" name="query_caption" rows="1"></textarea>
-    </div>
 
-      <%# <div>
-        <input type="hidden" id="owner_id_box" name="query_owner_id">
-      </div>%>
-
-    <div class="col-3">
-      <button type="button" class="btn btn-primary">
+          <div>
+              <input type="hidden" id="owner_id_box" name="query_owner_id">
+          </div>
+      <button>
         Upload photo
       </button>
+     </form>
     </div>
-  </div>
-</div>
-</form>
 
 <%# { :notice => "photo uploaded successfuly!" } %>
 <%# { :alert => user.errors.full_messages } %>

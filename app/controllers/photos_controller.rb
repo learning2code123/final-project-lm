@@ -2,6 +2,9 @@ class PhotosController < ApplicationController
   def index
     matching_photos = Photo.all
 
+    #@q = Photo.ransack(params[:q])
+    #@list_of_photos = @q.result
+
     @list_of_photos = matching_photos.order({ :created_at => :desc })
 
     render({ :template => "photos/index.html.erb" })
