@@ -15,7 +15,4 @@ class Photo < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates(:hex_code, { :presence => true })
-  validates(:type, { :presence => true })
-
 end

@@ -24,7 +24,7 @@ class PhotosController < ApplicationController
       #if session.fetch(:user_id) != nil
       render({ :template => "photos/show.html.erb" })
     #else
-      redirect_to "/user_sign_in", :alert => "Please sign in first"
+      #redirect_to "/user_sign_in", :alert => "Please sign in first"
     #end
   end
 
@@ -56,6 +56,9 @@ class PhotosController < ApplicationController
     the_photo.caption = params.fetch("query_caption")
     the_photo.owner_id = params.fetch("query_owner_id")
     #the_photo.favcolor = params.fetch("favcolor")
+
+    #validates(:hex_code, { :presence => true })
+    #validates(:type, { :presence => true })
 
     #if session.fetch(:user_id) != nil
       if the_photo.valid?
