@@ -4,7 +4,12 @@ class LooksController < ApplicationController
 
     #@list_of_photos = matching_photos.order({ :created_at => :desc })
 
-    #render({ :template => "photos/index.html.erb" })
+    
+  if session.fetch(:user_id) != nil
+	  render({ :template => "looks/index.html.erb" })
+    else
+      redirect_to "/user_sign_in", :alert => "Please sign in first"
+    end
   end
 
   def show

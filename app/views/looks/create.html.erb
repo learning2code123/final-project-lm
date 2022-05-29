@@ -1,3 +1,9 @@
+<% if session.fetch(:user_id) != nil %>
+
 hi
 
 <%# this page is for when users select a garment based on the item view (maybe could be erased) %>
+
+<% else %>
+
+<a href="user_sign_in"></a>
