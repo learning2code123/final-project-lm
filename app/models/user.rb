@@ -17,12 +17,9 @@ class User < ApplicationRecord
   validates :email, :presence => true
   has_secure_password
 
-  has_many(:garments, {
-    :class_name => "Photo",
-    :foreign_key => "owner_id",
-    :dependent => :destroy
-  })
+  has_many(:garments, {:class_name => "Photo", :foreign_key => "owner_id", :dependent => :destroy })
 
+  has_many(:looks, { :class_name => "Look", :foreign_key => "owner_id", :dependent => :destroy })
 
 
 end

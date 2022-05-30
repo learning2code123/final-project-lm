@@ -15,6 +15,13 @@
 #
 class Looks < ApplicationRecord
 
+  belongs_to(:first_garment, { :required => true, :class_name => "Garment", :foreign_key => "garment_1" })
+
+  #do I need to make one of this for each garment_x?
+
+  belongs_to(:second_garment, { :class_name => "Garment", :foreign_key => "garment_2" })
+  
+  belongs_to(:person, { :required => true, :class_name => "User", :foreign_key => "owner_id", :counter_cache => true })
   
 
 end
