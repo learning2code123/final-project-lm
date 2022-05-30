@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   
-  #migrated looks controller
+  #migrated from looks controller
   
   def create
     the_look = Looks.new

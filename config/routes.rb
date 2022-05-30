@@ -3,19 +3,19 @@ Rails.application.routes.draw do
  # Routes for the Looks resource:
 
   # CREATE
-  post("/insert_looks", { :controller => "photos", :action => "create_look" })
+  post("/insert_looks", { :controller => "looks", :action => "create_look" })
           
   # READ
   get("/looks", { :controller => "looks", :action => "index" })
   
-  #get("/looks/:path_id", { :controller => "looks", :action => "show" })
+  get("/looks/:path_id", { :controller => "looks", :action => "show" })
   
   # UPDATE
   
-  #post("/modify_look/:path_id", { :controller => "looks", :action => "update" })
+  post("/modify_look/:path_id", { :controller => "looks", :action => "update" })
   
   # DELETE
-  #get("/delete_look/:path_id", { :controller => "looks", :action => "destroy" })
+  get("/delete_look/:path_id", { :controller => "looks", :action => "destroy" })
 
   #------------------------------
 
