@@ -11,6 +11,7 @@
 #  garment_5   :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  owner_id    :integer
 #
 class Looks < ApplicationRecord
 
