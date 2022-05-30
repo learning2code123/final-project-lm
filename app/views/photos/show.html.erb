@@ -47,9 +47,14 @@
         <%= time_ago_in_words(@the_photo.updated_at) %> ago
       </dd>
 
-      <a href="/insert_looks">
-      <button type="button" class="btn btn-primary">Create a new look using this garment
-      </button>
+
+      <% if %>
+        <form action="/insert_looks" method="post">
+        <input type="hidden" name="garment_1_id" value="<%= @the_photo.id %>">
+        <button type="button" class="btn btn-primary">Create a new look using this garment</button>
+      <% else %>
+        Unbookmark
+      <% end %>
       </a>
   
 

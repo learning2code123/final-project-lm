@@ -50,6 +50,10 @@
   Your Garments
   </h2>
 
+<% current_user_photos = Photo.where({ :photo_id => @the_photo.id, :owner_id => session.fetch(:user_id) }) %>
+
+<% if current_user_photos != 0 %>
+
 <div class="container">
   <div class="row">
   <% @list_of_photos.each do |a_photo| %>
@@ -62,6 +66,12 @@
 </div>
 </div>
 
+<% else %>
+
+<% end %>
+
+
+<%# I'll probably erase everything from down here %>
 
 <hr>
 <div>
@@ -97,6 +107,7 @@
       </tr>
 
       <% @list_of_photos.each do |a_photo| %>
+      
       <tr>
         <td>
           <%= a_photo.id %>

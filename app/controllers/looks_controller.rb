@@ -24,34 +24,35 @@ class LooksController < ApplicationController
   else
     redirect_to "/user_sign_in", :alert => "Please sign in first"
   end
-
-  end
+end
 
   def create
-    the_look = Look.new
-    the_look.garment_1 = params.fetch("##")
-    the_look.garment_2 = params.fetch("##")
-    the_look.garment_3 = params.fetch("##")
-    the_look.garment_4 = params.fetch("##")
-    the_look.garment_5 = params.fetch("##")
+    the_look = Looks.new
+    the_look.owner_id = session.fetch(:user_id)
+    the_look.garment_1 = params.fetch("garment_1_id")
+    #the_look.garment_2 = params.fetch("##")
+    #the_look.garment_3 = params.fetch("##")
+    #the_look.garment_4 = params.fetch("##")
+    #the_look.garment_5 = params.fetch("##")
+    
     #the_photo.caption = params.fetch("query_caption")
     #the_photo.owner_id = params.fetch("query_owner_id")
 
-    #if the_look.valid?
-      the_look.save
-  if session.fetch(:user_id) != nil
+    if the_look.valid?
+    the_look.save
+  #if session.fetch(:user_id) != nil
     #organize the order of the conditionals once this is sorted out
-      redirect_to("/looks/:path_id", { :notice => "Look created successfully." })
-    #else
-      #redirect_to("/garments", { :alert => the_photo.errors.full_messages.to_sentence })
+      redirect_to("/looks", { :notice => "Look created successfully." })
     else
-      redirect_to "/user_sign_in", :alert => "Please sign in first"
-    end
+      redirect_to("/garments/#{the_look.garment_1}", { :alert => the_photo.errors.full_messages.to_sentence })
+    #else
+      #redirect_to "/user_sign_in", :alert => "Please sign in first"
+    #end
     #end
 
     render({ :template => "looks/create.html.erb" })
-
-  end
+      end
+    end
 
   #def update
     #the_id = params.fetch("path_id")
