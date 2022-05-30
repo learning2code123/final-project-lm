@@ -50,7 +50,7 @@
 
       <% if %>
         <form action="/insert_looks" method="post">
-        <input type="hidden" name="garment_1_id" value="<%= @the_photo.id %>">
+        <input type="hidden" name="garment_1_id" value="<%= @the_photo %>">
         <button type="button" class="btn btn-primary">Create a new look using this garment</button>
       <% else %>
         Unbookmark

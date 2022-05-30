@@ -50,7 +50,7 @@
   Your Garments
   </h2>
 
-<% current_user_photos = Photo.where({ :photo_id => @the_photo.id, :owner_id => session.fetch(:user_id) }) %>
+<% current_user_photos = Photo.where({ :id => @the_photo, :owner_id => session.fetch(:user_id) }) %>
 
 <% if current_user_photos != 0 %>
 
