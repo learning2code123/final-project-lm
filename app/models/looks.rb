@@ -4,11 +4,11 @@
 #
 #  id          :integer          not null, primary key
 #  description :string
-#  garment_1   :string
-#  garment_2   :string
-#  garment_3   :string
-#  garment_4   :string
-#  garment_5   :string
+#  garment_1   :integer
+#  garment_2   :integer
+#  garment_3   :integer
+#  garment_4   :integer
+#  garment_5   :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  owner_id    :integer

@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_30_190359) do
+ActiveRecord::Schema.define(version: 2022_05_30_193737) do
 
   create_table "looks", force: :cascade do |t|
-    t.string "garment_1"
-    t.string "garment_2"
-    t.string "garment_3"
-    t.string "garment_4"
-    t.string "garment_5"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "owner_id"
+    t.integer "garment_1"
+    t.integer "garment_2"
+    t.integer "garment_3"
+    t.integer "garment_4"
+    t.integer "garment_5"
   end
 
   create_table "photos", force: :cascade do |t|
