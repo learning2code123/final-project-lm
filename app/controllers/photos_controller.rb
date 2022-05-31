@@ -1,35 +1,5 @@
 class PhotosController < ApplicationController
   
-  #migrated from looks controller
-  
-  def create
-    the_look = Looks.new
-    the_look.owner_id = session.fetch(:user_id)
-    the_look.garment_1 = params.fetch("garment_1_id")
-    #the_look.garment_2 = params.fetch("##")
-    #the_look.garment_3 = params.fetch("##")
-    #the_look.garment_4 = params.fetch("##")
-    #the_look.garment_5 = params.fetch("##")
-    
-    #the_photo.caption = params.fetch("query_caption")
-    #the_photo.owner_id = params.fetch("query_owner_id")
-
-    if the_look.valid?
-    the_look.save
-  #if session.fetch(:user_id) != nil
-    #organize the order of the conditionals once this is sorted out
-      redirect_to("/looks", { :notice => "Look created successfully." })
-    else
-      redirect_to("/garments/#{the_look.garment_1}", { :alert => the_photo.errors.full_messages.to_sentence })
-    #else
-      #redirect_to "/user_sign_in", :alert => "Please sign in first"
-    #end
-    #end
-
-    render({ :template => "looks/create.html.erb" })
-      end
-    end
-  
   #photos controller 
 
   def index
@@ -40,11 +10,8 @@ class PhotosController < ApplicationController
 
     @list_of_photos = matching_photos.order({ :created_at => :desc })
 
-    #if session.fetch(:user_id) != nil
-      render({ :template => "photos/index.html.erb" })
-    #else
-      #redirect_to "/user_sign_in", :alert => "Please sign in first"
-    #end   
+    render({ :template => "photos/index.html.erb" })
+
   end
 
   def show
@@ -54,11 +21,7 @@ class PhotosController < ApplicationController
 
     @the_photo = matching_photos.at(0)
 
-      #if session.fetch(:user_id) != nil
-      render({ :template => "photos/show.html.erb" })
-    #else
-      #redirect_to "/user_sign_in", :alert => "Please sign in first"
-    #end
+    render({ :template => "photos/show.html.erb" })
   end
 
   def create
@@ -67,16 +30,12 @@ class PhotosController < ApplicationController
     the_photo.caption = params.fetch("query_caption")
     the_photo.owner_id = session.fetch(:user_id)
 
-    #if session.fetch(:user_id) != nil
       if the_photo.valid?
         the_photo.save
         redirect_to("/garments/#{the_photo.id}", { :notice => "Photo created successfully." })
       else
         redirect_to("/garments", { :alert => the_photo.errors.full_messages.to_sentence })
       end
-    #else
-      #redirect_to "/user_sign_in", :alert => "Please sign in first"
-    #end
 
   end
 
@@ -93,16 +52,12 @@ class PhotosController < ApplicationController
     #validates(:hex_code, { :presence => true })
     #validates(:type, { :presence => true })
 
-    #if session.fetch(:user_id) != nil
       if the_photo.valid?
         the_photo.save
         redirect_to("/garments/#{the_photo.id}", { :notice => "Photo updated successfully."} )
       else
         redirect_to("/garments/#{the_photo.id}", { :alert => the_photo.errors.full_messages.to_sentence })
       end
-    #else
-      #redirect_to "/user_sign_in", :alert => "Please sign in first"
-    #end
   end
 
 
@@ -116,11 +71,7 @@ class PhotosController < ApplicationController
 
     the_photo.save
     
-    #if session.fetch(:user_id) != nil
     redirect_to("/garments/#{the_photo.id}", { :notice => "Color updated successfully."} )
-    #else
-      #redirect_to "/user_sign_in", :alert => "Please sign in first"
-    #end  
 
   end
   
@@ -131,10 +82,7 @@ class PhotosController < ApplicationController
 
     the_photo.destroy
 
-    #if session.fetch(:user_id) != nil
     redirect_to("/garments", { :notice => "Photo deleted successfully."} )
-    #else
-      #redirect_to "/user_sign_in", :alert => "Please sign in first"
-    #end 
+
   end
 end
