@@ -1,3 +1,13 @@
 <%# page with a specific look %>
+<div>
+<h1>
+<%= @the_look.person.first_name.capitalize %>'s look #<%= @the_look.id %>
+</h1>
 
+    <div class="container">
+      <div class="row">
+      <div class="col">
+       <img src="<%= @the_look.first_garment.image %>">
+      </div>
 
+</div>
