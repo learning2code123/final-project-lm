@@ -22,8 +22,12 @@ class LooksController < ApplicationController
   def create
 
     the_look = Looks.new
-    the_look.user_id = session.fetch(:owner_id)
+    the_look.owner_id = session.fetch(:user_id)
     the_look.garment_1 = params.fetch("garment_1")
+    the_look.garment_2 = params.fetch("garment_2" , nil)
+    the_look.garment_3 = params.fetch("garment_3", nil)
+    the_look.garment_4 = params.fetch("garment_4", nil)
+    the_look.garment_5 = params.fetch("garment_5", nil)
 
     if the_look.valid?
       the_look.save

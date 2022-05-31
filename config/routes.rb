@@ -3,7 +3,7 @@ Rails.application.routes.draw do
  # Routes for the Looks resource:
 
   # CREATE
-  post("/insert_looks", { :controller => "looks", :action => "create_look" })
+  post("/insert_looks", { :controller => "looks", :action => "create" })
           
   # READ
   get("/looks", { :controller => "looks", :action => "index" })

@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
   has_many(:garments, {:class_name => "Photo", :foreign_key => "owner_id", :dependent => :destroy })
 
-  has_many(:looks, { :class_name => "Look", :foreign_key => "owner_id", :dependent => :destroy })
+  has_many(:looks, { :class_name => "Looks", :foreign_key => "owner_id", :dependent => :destroy })
 
 
 end
