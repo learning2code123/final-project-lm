@@ -13,27 +13,49 @@
 <p></p>
 
 <div>
-<form action="/insert_garment" method="post" class="form-horizontal" enctype="multipart/form-data">
-        <label for="image_box">
-          Image
-        </label>
-          </div>
-          <div>
-        <input type="file" id="image_box" name="query_image" class="form-control">
-          <label for="caption_box">
-            Name
-          </label>
-          <textarea id="caption_box" name="query_caption" rows="1"></textarea>
-
-          <div>
-              <input type="hidden" id="owner_id_box" name="query_owner_id">
-          </div>
-
-      <button>
-        Upload photo
-      </button>
-     </form>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form action="/insert_garment" method="post" class="form-horizontal" enctype="multipart/form-data">
     </div>
+    <div class="col">
+        <label for="image_box">Image</label>
+    </div>
+    <div class="col">
+      <input type="file" id="image_box" name="query_image" class="form-control">
+    </div>
+    <div class="col">
+      <label for="caption_box">Description</label>
+    </div>
+    <div class="col">
+      <textarea id="caption_box" name="query_caption" rows="1"></textarea>
+    </div>
+    <div>
+      <input type="hidden" id="owner_id_box" name="query_owner_id">
+    </div>
+    <div class="col">
+      <button>Select type</button>
+            <%# <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item">Bodysuit</a></li>
+              <li><a class="dropdown-item">Dress</a></li>
+              <li><a class="dropdown-item">Jackets and Coats</a></li>
+              <li><a class="dropdown-item">Jumpsuit</a></li>
+              <li><a class="dropdown-item">Pants</a></li>
+              <li><a class="dropdown-item">Shorts</a></li>
+              <li><a class="dropdown-item">Skirts</a></li>
+              <li><a class="dropdown-item">Tops</a></li>
+              <li><a class="dropdown-item">Vests</a></li>
+            </ul>%>
+    </div>
+
+    <div class="col">
+            <button>Upload photo</button>
+    </div>
+  
+  </form> 
+  </div> 
+</div>
+    
 
 
 

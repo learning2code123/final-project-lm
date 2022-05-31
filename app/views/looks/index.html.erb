@@ -105,3 +105,111 @@
 				</body>
 
 				</html>
+
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new look
+    </h2>
+
+    <form action="/insert_looks" method="post">
+      <div>
+        <label for="looks_box">
+          Looks
+        </label>
+
+
+        <select name="query_garment_1">
+        <% Looks.all.order(:created_at).each do |a_look| %>
+          <option value=<%= a_look.garment_1 %>>
+          <%= a_look.garment_1 %>
+          </option>
+        <% end %>
+        </select>
+
+
+
+      </div>
+
+      <button>
+        Create new look
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Look
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+          
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_looks.each do |a_look| %>
+      <tr>
+        <td>
+          <%= a_look.id %>
+        </td>
+
+        <td>
+          <%= a_look.person.first_name %>
+        </td>
+
+        <td>
+          <%= a_look.first_garment.id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_look.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_look.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/looks/<%= a_look.id %>">
+            Show details
+          </a>
+        </td>
+
+        <td>
+          <a href="/delete_look/<%= a_look.id %>">Delete look
+          </a>
+        </td>
+
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
