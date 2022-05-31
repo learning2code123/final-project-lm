@@ -58,10 +58,17 @@
       <div class="col">
     <form action="/modify_garment_color/<%= @the_photo.id %>">
       <label for="favcolor">Please update the item's color:</label>
-      <input type="color" id="favcolor" name="favcolor" value=""><br><br>
-        <button class="btn btn-secondary">
-        Choose color
-      </button>
+    <select class="form-select" aria-label="Default select example" name="favcolor">
+  <option selected>Open this select menu</option>
+    <% Color.all.each do |a_color| %>
+  <option value="<%= a_color.hex_code %>">
+  <%= a_color.color_name %>
+  </option>
+  <% end %>
+  </select>
+  <button class="btn btn-secondary">
+  Choose color
+  </button>
     </form>
       </div>
         </div>
@@ -104,6 +111,15 @@
 </div>
 </div>
 </div>
+
+ <div class="container">
+  <div class="row">
+  <div class="col">
+  <img src="">
+  </div>
+  </div>
+  </div>
+
 
 <div>
   <div>

@@ -74,6 +74,64 @@ class PhotosController < ApplicationController
     redirect_to("/garments/#{the_photo.id}", { :notice => "Color updated successfully."} )
 
   end
+
+
+#FORMULA
+
+#HEX TO RGB
+
+#"the_photo.hex_code".match(/^#(..)(..)(..)$/).captures.map(&:hex)
+
+#i need to fetch the r, g and b from here
+
+#user_input_r =
+#user_input_g =
+#user_input_b =
+
+#small r formula = R+r/2
+
+#small_r_numerator = (user_input_r + color.code_r)
+
+#small_r_final = small_r_numerator / 2
+
+#distance_1st_part = small_r / 256
+
+#distance_1st_part_final = distance_1st_part + 2
+
+#delta_r = user_input_r - color.code_r
+
+#delta_r_squared = delta_r ** 2
+
+#distance_2nd_part = distance_1st_part_final * delta_r_squared
+
+#delta_g = user_input_g - color.code_g
+
+#delta_g_squared = delta_g ** 2
+
+#distance_3rd_part = 4 * delta_g_squared
+
+#delta_b = user_input_b - color.code_b
+
+#delta_b_squared = delta_b ** 2
+
+#distance_4th_part_numerator = 255 - small_r_final
+
+#distance_4th_part_fraction = distance_4th_part_numerator/256
+
+#distance_4th_part_parenthesis = distance_4th_part_fraction + 2
+
+#distance_4th_part_final = distance_4th_part_parenthesis * delta_b_squared
+
+#distance_final_sum = distance_2nd_part + distance_3rd_part + distance_4th_part_final
+
+#distance_result = distance_final_sum ** 0.5
+
+
+
+
+
+
+
   
 
   def destroy
