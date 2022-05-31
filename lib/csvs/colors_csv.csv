@@ -1,0 +1,37 @@
+category,color_name,hex_code,code_r,code_g,code_b
+cat_000,black,#000000,0,0,0
+cat_032,charcoal,#6A757B,106,117,123
+cat_033,gray,#B2B7BB,178,183,187
+cat_034,white,#FFFFFF,255,255,255
+cat_001,navy,#082366,8,35,102
+cat_002,cobalt,#1B3F97,27,63,151
+cat_003, blue,#00B0F0,0,176,240
+cat_004, sky blue,#76D7EA,118,215,234
+cat_005,sea foam,#CDEBEB,205,235,235
+cat_006,turquoise,#01A0B3,1,160,179
+cat_007,emerald,#016A5C,1,106,92
+cat_008,olive,#356637,53,102,55
+cat_009,green,#66923D,102,146,61
+cat_010,bright green,#01A638,1,166,56
+cat_011, yellow green,#C5E17A,197,225,122
+cat_012,light yellow,#FBE870,251,232,112
+cat_013,yellow,#FED24D,254,210,77
+cat_014,mustard,#E5B539,229,181,57
+cat_015, orange,#FF8833,255,136,51
+cat_016, red orange,#FF681F,255,104,31
+cat_017,red,#EE2D24,238,45,36
+cat_018,dark red,#B32016,179,32,22
+cat_019,light pink,#F6C4DF,246,196,223
+cat_020,pink,#F195BE,241,149,190
+cat_021, magenta,#F653A6,246,83,166
+cat_022,berry,#B2015C,178,1,92
+cat_023,mauve,#B46C6F,180,108,111
+cat_024,lilac,#B9B3D9,185,179,217
+cat_025,plum,#771D7D,119,29,125
+cat_026,purple,#7F3E98,127,62,152
+cat_027,brown,#9C5F0C,156,95,12
+cat_028,dark brown,#562504,86,37,4
+cat_029,beige,#F0D8BE,240,216,190
+cat_035,cream,#F9F0E1,249,240,225
+cat_030,peach,#FDD2C2,253,210,194
+cat_031,coral,#F69E88,246,158,136

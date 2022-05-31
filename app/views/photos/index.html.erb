@@ -52,7 +52,7 @@
 
 <% current_user_photos = Photo.where({ :id => @the_photo, :owner_id => session.fetch(:user_id) }) %>
 
-<% if current_user_photos != 0 %>
+<% the_photos = current_user_photos.at(0) %>
 
 <div class="container">
   <div class="row">
@@ -65,10 +65,6 @@
 <% end %>
 </div>
 </div>
-
-<% else %>
-
-<% end %>
 
 
 <%# I'll probably erase everything from down here %>
