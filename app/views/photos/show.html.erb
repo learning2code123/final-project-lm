@@ -20,7 +20,7 @@
       </dd>
 
       <dt>
-        Caption
+        Description
       </dt>
       <dd>
         <%= @the_photo.caption %>
@@ -48,13 +48,36 @@
       </dd>
 
 
+      <dt>
+        Color
+      </dt>
+      <dd>
+
+<div class="container">
+      <div class="row">
+      <div class="col">
+    <form action="/modify_garment_color/<%= @the_photo.id %>">
+      <label for="favcolor">Please update the item's color:</label>
+      <input type="color" id="favcolor" name="favcolor" value=""><br><br>
+        <button class="btn btn-secondary">
+        Choose color
+      </button>
+    </form>
+      </div>
+        </div>
+      </form>
+    </div>
+
+      </dd>
+
+
       <% if %>
         <form action="/insert_looks" method="post">
         <input type="hidden" name="garment_1" value="<%= @the_photo.id %>">
         <button class="btn btn-primary">Create a new look using this garment</button>
         </form>
       <% else %>
-        Unbookmark
+        
       <% end %>
       </a>
   
@@ -66,9 +89,12 @@
         </a>
       </div>
       <div>
-        <a href="/delete_garment/<%= @the_photo.id %>">
+        <form action="/delete_garment/<%= @the_photo.id %>">
+        <button type="submit" class="btn btn-danger">
+        <%# <a href="/delete_garment/<%= @the_photo.id %>
           Delete photo
         </a>
+        </button>
         </div>
       </div>
     </dl>
@@ -78,26 +104,6 @@
 </div>
 </div>
 
-<div class="container">
-      <div class="row">
-      <div class="col">
-    <form action="/modify_garment_color/<%= @the_photo.id %>">
-      <label for="favcolor">Select your favorite color:</label>
-      <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
-      <input type="submit" required>
-    </form>
-
-        <%# <input type="text" id="image_box" name="query_image" value="<%= @the_photo.image %>
-      </div>
-        <%# <input type="submit"><button>Choose color</button>%>
-        </div>
-      <button class="btn btn-secondary">
-        Choose color
-      </button>
-      </form>
-    </div>
-    
-      <%# show the color that was chosen %>
 
 <hr>
 <div class="col">
