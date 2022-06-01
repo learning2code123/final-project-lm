@@ -13,9 +13,34 @@
        <div class="col">
     <dl>
       <dt>
-      
-
+  
+  <label for="garment_2">Add another garment</label>
+    <select class="form-select" aria-label="Default select example" name="query_garment_2">
+    <option selected>Open this select menu</option>
+      <% Photo.all.each do |a_photo| %>
+  <option value="<%= a_photo.id %>">
+  <%= a_photo.caption %>
+  </option>
+  <% end %>
+  </select>
+    </div>
+    <div class="col">
+            <button>Add this to your look!</button>
+    </div>
 </div>
+
+<%# if garment_2 is selected
+
+show the picture as well
+
+else
+
+show nothing %>
+
+
+
+
+
 
 <%#
 
@@ -47,3 +72,69 @@ hide
 
 
  %>
+
+<div>
+  <div>
+    <h2>
+      Edit look
+    </h2>
+
+    <form action="/modify_look/<%= @the_look.id %>"  method="post" >
+    <div>
+          <label for="caption_box">
+          Garments associated with this look
+        </label>
+
+        <input type="title" id="garment_1_box" name="query_garment_1" value="<%= @the_look.garment_1 %>">
+
+        <% if @the_look.garment_2 != nil %>
+        <input type="title" id="garment_1_box" name="query_garment_1" value="<%= @the_look.garment_2 %>">
+
+        <% else %>
+        <%end %>
+
+        <% if @the_look.garment_3 != nil %>
+
+        <input type="title" id="garment_1_box" name="query_garment_1" value="<%= @the_look.garment_3 %>">
+
+        <% else %>
+        <%end %>
+
+        <% if @the_look.garment_4 != nil %>
+
+        <input type="title" id="garment_1_box" name="query_garment_1" value="<%= @the_look.garment_4 %>">
+
+        <% else %>
+        <%end %>
+
+        <% if @the_look.garment_5 != nil %>
+
+        <input type="title" id="garment_1_box" name="query_garment_1" value="<%= @the_look.garment_5 %>">
+
+        <% else %>
+        <%end %>
+
+
+
+    </div>
+
+      <div>
+        <label for="caption_box">
+          Description
+        </label>
+
+        <textarea id="caption_box" name="query_caption"><%= @the_look.description %></textarea>
+      </div>
+
+      <div>
+        <input type="hidden" id="owner_id_box" name="query_owner_id" value="<%= @the_look.owner_id %>">
+      </div>
+
+      <button>
+        Update Look
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
