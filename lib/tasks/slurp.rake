@@ -57,4 +57,25 @@ namespace :slurp do
 
   end
 
+
+task type: :environment do
+
+  require "csv"
+
+  csv_text = File.read(Rails.root.join("lib", "csvs", "type.csv"))
+  csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
+  csv.each do |row|
+  ty = Type.new
+  ty.type = row["type"]
+  ty.save
+
+  puts "#{ty.type}, saved"
+  end
+
+puts "There are now #{Type.count} rows in the transactions table"
+
+end
+
+
+
 end
