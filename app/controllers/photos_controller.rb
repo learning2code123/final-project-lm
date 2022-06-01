@@ -54,9 +54,10 @@ class PhotosController < ApplicationController
     the_id = params.fetch("path_id")
     @the_photo = Photo.where({ :id => the_id }).at(0)
 
-    @the_photo.image = params.fetch("query_image")
+    @the_photo.image = params.fetch("query_image", @the_photo.image)
     @the_photo.caption = params.fetch("query_caption")
     @the_photo.owner_id = params.fetch("query_owner_id")
+    @the_photo.garment_type = params.fetch("query_garment_type")
     #the_photo.favcolor = params.fetch("favcolor")
 
     #validates(:hex_code, { :presence => true })
