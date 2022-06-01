@@ -132,6 +132,8 @@
     </h2>
 
     <form action="/modify_garment/<%= @the_photo.id %>"  method="post" >
+
+
       <div>
         <label for="caption_box">
           Description
@@ -143,6 +145,25 @@
       <div>
         <input type="hidden" id="owner_id_box" name="query_owner_id" value="<%= @the_photo.owner_id %>">
       </div>
+
+      <div>
+          <label for="garment_type">Type</label>
+        <select class="form-select" aria-label="Default select example" name="query_garment_type">
+        <option selected><%= @the_photo.garment_type %></option>
+          <% AGarmentType.all.each do |a_type| %>
+      <option value="<%= a_type.garment_type_name %>">
+      <%= a_type.garment_type_name %>
+      </option>
+      <% end %>
+      </select>
+    </div>
+
+
+
+
+
+
+
 
       <button>
         Update photo

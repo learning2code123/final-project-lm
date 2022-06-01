@@ -38,7 +38,7 @@ class PhotosController < ApplicationController
     the_photo.image = params.fetch("query_image")
     the_photo.caption = params.fetch("query_caption")
     the_photo.owner_id = session.fetch(:user_id)
-    #the_photo.type = params.fetch("query_type")
+    the_photo.garment_type = params.fetch("query_garment_type")
 
       if the_photo.valid?
         the_photo.save

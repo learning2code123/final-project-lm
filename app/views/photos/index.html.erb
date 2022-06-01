@@ -29,11 +29,11 @@
 
     <%# do a form here for type %>
     <label for="garment_type">Select type</label>
-    <select class="form-select" aria-label="Default select example" name="garment_type">
-    <option selected>Open this select menu</option>
-      <% GarmentType.all.each do |a_type| %>
-  <option value="<%= a_type.garment_type %>">
-  <%= a_type.garment_type %>
+    <select class="form-select" aria-label="Default select example" name="query_garment_type">
+    <option selected></option>
+      <% AGarmentType.all.each do |a_type| %>
+  <option value="<%= a_type.garment_type_name %>">
+  <%= a_type.garment_type_name %>
   </option>
   <% end %>
   </select>
