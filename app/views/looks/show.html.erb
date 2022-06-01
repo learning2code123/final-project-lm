@@ -5,32 +5,34 @@
 </h1>
 
 <p></p>
+ 
 
   <div class="container">
   <div class="row">
-      <div { max-height: 200px; max-width: 50%; } class="col">
-       <img src="<%= @the_look.first_garment.image %>" class="img-thumbnail">
+      <div class="col">
+       <img src="<%= @the_look.first_garment.image %>" class="img-thumbnail" width = "300" height = "300">
       </div>
 
       <% if @the_look.second_garment != nil %>
-       <div { max-height: 200px; max-width: 50%; } class="col">
-       <img src="<%= @the_look.second_garment.image %>" class="img-thumbnail">
+       <div class="col">
+        <img src="<%= @the_look.second_garment.image %>" class="img-thumbnail" width = "300" height = "300">
+      
        <% else %>
        </div>
        <%end %>
   </div>  
 
       <% if @the_look.third_garment != nil %>
-       <div { max-height: 200px; max-width: 50%; } class="col">
-       <img src="<%= @the_look.third_garment.image %>" class="img-thumbnail">
+       <div class="col">
+       <img src="<%= @the_look.third_garment.image %>" class="img-thumbnail" width = "300" height = "300">
        </div>
        <% else %>
        
        <%end %>
 
       <% if @the_look.fourth_garment != nil %>
-       <div { max-height: 200px; max-width: 50%; } class="col">
-       <img src="<%= @the_look.fourth_garment.image %>" class="img-thumbnail">
+       <div class="col">
+       <img src="<%= @the_look.fourth_garment.image %>" class="img-thumbnail" width = "300" height = "300">
         </div>
        <% else %>
       
@@ -39,10 +41,10 @@
       </div>
       
       <div class="row">
-      <div { max-height: 200px; max-width: 50%; } class="col">
+      <div class="col">
         <% if @the_look.fifth_garment != nil %>
        <div class="col">
-       <img src="<%= @the_look.fifth_garment.image %>" class="img-thumbnail">
+       <img src="<%= @the_look.fifth_garment.image %>" class="img-thumbnail" width = "300" height = "300">
       </div>
        <% else %>
        <%end %>
