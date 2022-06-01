@@ -14,6 +14,17 @@ class Type < ApplicationRecord
 
   #COMBINATIONS
 
+  #The algorithm will look something like
+
+  # @garment_1.hex color = base_color 1
+
+  # If base_color_1 == navy
+    #make a each do with color_combination using base hex code
+
+    #combination.save
+
+
+
   #Bodysuit + Pants
   #Bodysuit + Skirt
   #Bodysuit + Shorts
@@ -40,5 +51,18 @@ class Type < ApplicationRecord
   
   #Jumpsuit
   #Jumpsuit + Jackets and Coats
+
+
+  #at the end
+
+  #if color_combination.valid? && type_combination.valid?
+
+  #show garment
+
+  #else
+
+  #blank
+
+  #end
 
 end
