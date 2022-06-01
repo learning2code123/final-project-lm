@@ -10,12 +10,16 @@
   <div class="container">
   <div class="row">
       <div class="col">
+      <a href="/garments/<%= @the_look.first_garment.id %>">
        <img src="<%= @the_look.first_garment.image %>" class="img-thumbnail" width = "300" height = "300">
+       </a>
       </div>
 
       <% if @the_look.second_garment != nil %>
        <div class="col">
+       <a href="/garments/<%= @the_look.second_garment.id %>">
         <img src="<%= @the_look.second_garment.image %>" class="img-thumbnail" width = "300" height = "300">
+        </a>
       
        <% else %>
        </div>
@@ -24,7 +28,9 @@
 
       <% if @the_look.third_garment != nil %>
        <div class="col">
+       <a href="/garments/<%= @the_look.third_garment.id %>">
        <img src="<%= @the_look.third_garment.image %>" class="img-thumbnail" width = "300" height = "300">
+       </a>
        </div>
        <% else %>
        
@@ -32,7 +38,9 @@
 
       <% if @the_look.fourth_garment != nil %>
        <div class="col">
+       <a href="/garments/<%= @the_look.fourth_garment.id %>">
        <img src="<%= @the_look.fourth_garment.image %>" class="img-thumbnail" width = "300" height = "300">
+       </a>
         </div>
        <% else %>
       
@@ -44,7 +52,9 @@
       <div class="col">
         <% if @the_look.fifth_garment != nil %>
        <div class="col">
+       <a href="/garments/<%= @the_look.fifth_garment.id %>">
        <img src="<%= @the_look.fifth_garment.image %>" class="img-thumbnail" width = "300" height = "300">
+       </a>
       </div>
        <% else %>
        <%end %>
