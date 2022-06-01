@@ -31,4 +31,6 @@ class Photo < ApplicationRecord
 
   belongs_to(:person, { :required => true, :class_name => "User", :foreign_key => "owner_id" })
 
+   #validates :type, :presence => true
+
 end

@@ -29,6 +29,7 @@ class PhotosController < ApplicationController
     the_photo.image = params.fetch("query_image")
     the_photo.caption = params.fetch("query_caption")
     the_photo.owner_id = session.fetch(:user_id)
+    #the_photo.type = params.fetch("query_type")
 
       if the_photo.valid?
         the_photo.save
@@ -75,8 +76,7 @@ class PhotosController < ApplicationController
 
   end
 
-
-#FORMULA
+#FORMULA (To be used after final project)
 
 #HEX TO RGB
 
@@ -126,13 +126,6 @@ class PhotosController < ApplicationController
 
 #distance_result = distance_final_sum ** 0.5
 
-
-
-
-
-
-
-  
 
   def destroy
     the_id = params.fetch("path_id")

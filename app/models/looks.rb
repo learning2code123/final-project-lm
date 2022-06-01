@@ -26,6 +26,8 @@ class Looks < ApplicationRecord
   belongs_to(:fifth_garment, { :class_name => "Photo", :foreign_key => "garment_5" })
   
   belongs_to(:person, { :required => true, :class_name => "User", :foreign_key => "owner_id" })
+
+ 
   
 
 end

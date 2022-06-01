@@ -17,38 +17,27 @@
   <div class="row">
     <div class="col">
       <form action="/insert_garment" method="post" class="form-horizontal" enctype="multipart/form-data">
-    </div>
-    <div class="col">
         <label for="image_box">Image</label>
-    </div>
-    <div class="col">
       <input type="file" id="image_box" name="query_image" class="form-control">
-    </div>
-    <div class="col">
       <label for="caption_box">Description</label>
-    </div>
-    <div class="col">
       <textarea id="caption_box" name="query_caption" rows="1"></textarea>
-    </div>
-    <div>
       <input type="hidden" id="owner_id_box" name="query_owner_id">
     </div>
     <div class="col">
-    
-      <button>Select type</button>
-            <%# <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item">Bodysuit</a></li>
-              <li><a class="dropdown-item">Dress</a></li>
-              <li><a class="dropdown-item">Jackets and Coats</a></li>
-              <li><a class="dropdown-item">Jumpsuit</a></li>
-              <li><a class="dropdown-item">Pants</a></li>
-              <li><a class="dropdown-item">Shorts</a></li>
-              <li><a class="dropdown-item">Skirts</a></li>
-              <li><a class="dropdown-item">Tops</a></li>
-              <li><a class="dropdown-item">Vests</a></li>
-            </ul>%>
+    <label for="garment_type">Select type</label>
+    <select class="form-select" aria-label="Default select example" name="query_type">
+    <option selected>Open this select menu</option>
+          <option value="Bodysuit">Bodysuit</option>
+          <option value="Dress">Dress</option>
+          <option value="Jackets and Coats">Jackets and Coats</option>
+          <option value="Jumpsuit">Jumpsuit</option>
+          <option value="Pants">Pants</option>
+          <option value="Shorts">Shorts</option>
+          <option value="Skirts">Skirts</option>
+          <option value="Tops">Tops</option>
+          <option value="Vests">Vests</option>
+      </select>
     </div>
-
     <div class="col">
             <button>Upload photo</button>
     </div>
