@@ -118,11 +118,6 @@ else
 
 show nothing %>
 
-
-
-
-
-
 <%#
 
 color_garment = garment_1.fetch("hex_code")
@@ -163,18 +158,53 @@ hide
     <form action="/modify_look/<%= @the_look.id %>"  method="post" >
     <div>
           <label for="caption_box">
-          Garments associated with this look
+          Choose the garment you want to remove from this look
         </label>
 
-        <input type="title" id="garment_1_box" name="query_garment_1" value="<%= @the_look.garment_1 %>">
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="<%= @the_look.garment_1 %>" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+              Garment <%= @the_look.garment_1 %>
+            </label>
+          </div>
 
-        <input type="title" id="garment_2_box" name="query_garment_2" value="<%= @the_look.garment_2 %>">
+      <% if @the_look.garment_2 != nil %>
 
-        <input type="title" id="garment_3_box" name="query_garment_3" value="<%= @the_look.garment_3 %>">
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+              Garment <%= @the_look.garment_2 %>
+            </label>
+          </div>
 
-        <input type="title" id="garment_4_box" name="query_garment_4" value="<%= @the_look.garment_4 %>">
+      <% elsif @the_look.garment_3 != nil %>
 
-        <input type="title" id="garment_5_box" name="query_garment_2" value="<%= @the_look.garment_5 %>">
+                <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+              Garment <%= @the_look.garment_3 %>
+            </label>
+
+        <% elsif @the_look.garment_4 != nil %>
+          </div>
+                <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+              Garment <%= @the_look.garment_4 %>
+            </label>
+
+      <% elsif @the_look.garment_5 != nil %>
+          </div>
+                <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+              Garment <%= @the_look.garment_5 %>
+            </label>
+          </div>
+          </div>
+
+      <% else %>
+      <% end %>
 
     
     <%# allow users to delete each garment %>
@@ -183,7 +213,7 @@ hide
 
       <div>
         <label for="caption_box">
-          Description
+          Change Look's Description
         </label>
 
         <textarea id="caption_box" name="query_description"><%= @the_look.description %></textarea>
