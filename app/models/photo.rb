@@ -2,14 +2,14 @@
 #
 # Table name: photos
 #
-#  id         :integer          not null, primary key
-#  caption    :text
-#  hex_code   :string
-#  image      :string
-#  type       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  owner_id   :integer
+#  id           :integer          not null, primary key
+#  caption      :text
+#  garment_type :string
+#  hex_code     :string
+#  image        :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  owner_id     :integer
 #
 class Photo < ApplicationRecord
 
