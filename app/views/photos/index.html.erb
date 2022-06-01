@@ -1,3 +1,5 @@
+<%# if session.fetch(:user_id) != nil %>
+
 <div>
   <div>
     <h1>
@@ -32,6 +34,7 @@
   <%= a_type.garment_type %>
   </option>
   <% end %>
+  </select>
     </div>
     <div class="col">
             <button>Upload photo</button>
@@ -147,3 +150,11 @@
 </div>
 
 <hr>
+
+
+
+<%# else %>
+
+<%# redirect_to "/user_authentication/sign_in", :alert => "Please sign in first!" %>
+
+<%# end %>
