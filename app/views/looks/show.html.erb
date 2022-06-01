@@ -1,3 +1,10 @@
+<%# Photo.all.where.not({ :id => [ @the_look.garment_1.hex_code, @the_look.garment_2 ] }).each do |a_photo| %>
+<%# a_photo.hex_code %>
+
+
+
+
+<hr>
 <%# page with a specific look %>
 <div>
 <h1>
@@ -131,7 +138,7 @@
     <select class="form-select" aria-label="Default select example" name="query_garment_2">
     <option selected></option>
     <%# add rest of garments below %>
-      <% Photo.all.where.not({ :id => [ @the_look.garment_1, @the_look.garment_2 ] }).each do |a_photo| %>
+      <% Photo.all.where.not({ :id => [ @the_look.garment_1, @the_look.garment_2, @the_look.garment_3, @the_look.garment_5 ] }).each do |a_photo| %>
   <option value="<%= a_photo.id %>">
   <%= a_photo.caption %>
   </option>
@@ -142,7 +149,7 @@
   <label for="garment_3">Add third garment</label>
     <select class="form-select" aria-label="Default select example" name="query_garment_3">
     <option selected></option>
-      <% Photo.all.each do |a_photo| %>
+      <% Photo.all.where.not({ :id => [ @the_look.garment_1, @the_look.garment_2, @the_look.garment_3, @the_look.garment_5 ] }).each do |a_photo| %>
   <option value="<%= a_photo.id %>">
   <%= a_photo.caption %>
   </option>
@@ -151,10 +158,10 @@
 
 
     <form action="/modify_look/<%= @the_look.id %>" method="post">
-  <label for="garment_2">Add fourth garment</label>
+  <label for="garment_4">Add fourth garment</label>
     <select class="form-select" aria-label="Default select example" name="query_garment_4">
     <option selected></option>
-      <% Photo.all.each do |a_photo| %>
+      <% Photo.all.where.not({ :id => [ @the_look.garment_1, @the_look.garment_2, @the_look.garment_3, @the_look.garment_5 ] }).each do |a_photo| %>
   <option value="<%= a_photo.id %>">
   <%= a_photo.caption %>
   </option>
@@ -163,10 +170,10 @@
 
 
   <form action="/modify_look/<%= @the_look.id %>" method="post">
-  <label for="garment_2">Add fifth garment</label>
+  <label for="garment_5">Add fifth garment</label>
     <select class="form-select" aria-label="Default select example" name="query_garment_5">
     <option selected></option>
-      <% Photo.all.each do |a_photo| %>
+      <% Photo.all.where.not({ :id => [ @the_look.garment_1, @the_look.garment_2, @the_look.garment_3, @the_look.garment_5 ] }).each do |a_photo| %>
   <option value="<%= a_photo.id %>">
   <%= a_photo.caption %>
   </option>

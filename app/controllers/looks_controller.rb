@@ -87,4 +87,37 @@ class LooksController < ApplicationController
 
     redirect_to("/looks", { :notice => "Look deleted successfully."} )
   end
+
+  def suggestions
+
+    the_id = params.fetch("path_id")
+    @the_look_suggestions = Looks.where({ :id => the_id }).at(0)
+
+    @algorithm_check = @the_look_suggestions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  end
+
+
+
 end
