@@ -58,18 +58,18 @@ namespace :slurp do
   end
 
 
-task type: :environment do
+  task types: :environment do
 
   require "csv"
 
-  csv_text = File.read(Rails.root.join("lib", "csvs", "type.csv"))
+  csv_text = File.read(Rails.root.join("lib", "csvs", "type_sheet.csv"))
   csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
   csv.each do |row|
   ty = Type.new
-  ty.type = row["type"]
+  ty.garment_type = row["type"]
   ty.save
 
-  puts "#{ty.type}, saved"
+  puts "#{ty.garment_type}, saved"
   end
 
 puts "There are now #{Type.count} rows in the transactions table"

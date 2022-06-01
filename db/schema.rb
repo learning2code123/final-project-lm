@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_01_021708) do
+ActiveRecord::Schema.define(version: 2022_06_01_024206) do
 
   create_table "color_combinations", force: :cascade do |t|
     t.string "category_id"
@@ -62,9 +62,9 @@ ActiveRecord::Schema.define(version: 2022_06_01_021708) do
   end
 
   create_table "types", force: :cascade do |t|
-    t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "garment_type"
   end
 
   create_table "users", force: :cascade do |t|

@@ -27,16 +27,11 @@
     <label for="garment_type">Select type</label>
     <select class="form-select" aria-label="Default select example" name="query_type">
     <option selected>Open this select menu</option>
-          <option value="Bodysuit">Bodysuit</option>
-          <option value="Dress">Dress</option>
-          <option value="Jackets and Coats">Jackets and Coats</option>
-          <option value="Jumpsuit">Jumpsuit</option>
-          <option value="Pants">Pants</option>
-          <option value="Shorts">Shorts</option>
-          <option value="Skirts">Skirts</option>
-          <option value="Tops">Tops</option>
-          <option value="Vests">Vests</option>
-      </select>
+      <% Type.all.each do |a_type| %>
+  <option value="<%= a_type.type %>">
+  <%= a_type.type %>
+  </option>
+  <% end %>
     </div>
     <div class="col">
             <button>Upload photo</button>
