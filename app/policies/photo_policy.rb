@@ -9,8 +9,8 @@ class PhotoPolicy
 
   def show?
     user == photo.owner ||
-      #!photo.owner.private? ||
-      #photo.owner.followers.include?(user)
+      !photo.owner.private? ||
+      photo.owner.followers.include?(user)
       photo.owner.include?(user)
   end
 
