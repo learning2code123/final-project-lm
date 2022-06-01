@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_01_030634) do
+ActiveRecord::Schema.define(version: 2022_06_01_221732) do
+
+  create_table "a_garment_types", force: :cascade do |t|
+    t.string "garment_type_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "color_combinations", force: :cascade do |t|
     t.string "category_id"
@@ -59,12 +65,6 @@ ActiveRecord::Schema.define(version: 2022_06_01_030634) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "garment_type"
     t.string "hex_code"
-  end
-
-  create_table "types", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "garment_type"
   end
 
   create_table "users", force: :cascade do |t|

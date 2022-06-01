@@ -19,17 +19,19 @@
   <div class="row">
     <div class="col">
       <form action="/insert_garment" method="post" class="form-horizontal" enctype="multipart/form-data">
-        <label for="image_box">Image</label>
+      <label for="image_box">Image</label>
       <input type="file" id="image_box" name="query_image" class="form-control">
       <label for="caption_box">Description</label>
       <textarea id="caption_box" name="query_caption" rows="1"></textarea>
       <input type="hidden" id="owner_id_box" name="query_owner_id">
     </div>
     <div class="col">
+
+    <%# do a form here for type %>
     <label for="garment_type">Select type</label>
     <select class="form-select" aria-label="Default select example" name="garment_type">
     <option selected>Open this select menu</option>
-      <% Type.all.each do |a_type| %>
+      <% GarmentType.all.each do |a_type| %>
   <option value="<%= a_type.garment_type %>">
   <%= a_type.garment_type %>
   </option>
