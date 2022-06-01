@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
  # Routes for the Looks resource:
 
-  # CREATE
+ #REMOVE GARMENT FROM LOOK
+
+ post("/update_look/:path_id", { :controller => "looks", :action => "remove_garment_from_look" })
+ 
+ # CREATE
   post("/insert_looks", { :controller => "looks", :action => "create" })
           
   # READ

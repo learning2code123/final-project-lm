@@ -16,9 +16,26 @@ class Type < ApplicationRecord
 
   #The algorithm will look something like
 
-  # @garment_1.hex color = base_color 1
+  # @garment_1.hex_color = base_color_1
 
-  # If base_color_1 == navy
+  # where to find combination hex code
+
+  #color combination table for a match
+
+  #do this in the controller action on the looks controller show action
+
+  #i can also do it in the looks model
+
+  #combinations each do |a_combination| 
+  
+  #look at the other garments that have those colors
+
+  #have that as a list
+
+
+
+
+  # If b
     #make a each do with color_combination using base hex code
 
     #combination.save

@@ -59,6 +59,26 @@ class LooksController < ApplicationController
     end
   end
 
+  def remove_garment_from_look
+
+    the_id = params.fetch("path_id")
+    @the_look = Looks.where({ :id => the_id }).at(0)
+
+    @the_look.garment_1 = params.fetch("delete_garment_1", @the_look.garment_1)
+    @the_look.garment_2 = params.fetch("delete_garment_2", @the_look.garment_2)
+    @the_look.garment_3 = params.fetch("delete_garment_3",@the_look.garment_3)
+    @the_look.garment_4 = params.fetch("delete_garment_4", @the_look.garment_4)
+    @the_look.garment_5 = params.fetch("delete_garment_5", @the_look.garment_5)
+
+    if @the_look.valid?
+      @the_look.save
+      redirect_to("/looks/#{@the_look.id}", { :notice => "Look updated successfully."} )
+    else
+      redirect_to("/looks/#{@the_look.id}", { :alert => "Garment 1 can't be blank" })
+    end
+
+  end
+
   def destroy
     the_id = params.fetch("path_id")
     @the_look = Looks.where({ :id => the_id }).at(0)

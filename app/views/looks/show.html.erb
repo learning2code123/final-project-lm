@@ -114,10 +114,14 @@
   <hr>
 
   <form action="/modify_look/<%= @the_look.id %>" method="post">
+
+
+
   <label for="garment_2">Add second garment</label>
     <select class="form-select" aria-label="Default select example" name="query_garment_2">
     <option selected>Open this select menu</option>
-      <% Photo.all.each do |a_photo| %>
+    <%# add rest of garments below %>
+      <% Photo.all.where.not({ :id => [ @the_look.garment_1, @the_look.garment_2 ] }).each do |a_photo| %>
   <option value="<%= a_photo.id %>">
   <%= a_photo.caption %>
   </option>
@@ -215,56 +219,59 @@ hide
       Edit look
     </h2>
 
-    <form action="/modify_look/<%= @the_look.id %>"  method="post" >
+    <form action="/update_look/<%= @the_look.id %>"  method="post" >
     <div>
           <label for="caption_box">
           Choose the garment you want to remove from this look
         </label>
 
         <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="<%= @the_look.garment_1 %>" id="flexCheckDefault">
+        <input class="form-check-input" type="checkbox" value="<%= @the_look.garment_1 %>" id="flexCheckDefault_1" name="delete_garment_1">
         <label class="form-check-label" for="flexCheckDefault">
-              Garment <%= @the_look.garment_1 %>
+              Garment <%= @the_look.first_garment.caption %>
             </label>
           </div>
 
-      <% if @the_look.garment_2 != nil %>
+      <% if @the_look.garment_2 != 0 %>
 
         <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault_2" name="delete_garment_2">
         <label class="form-check-label" for="flexCheckDefault">
               Garment <%= @the_look.garment_2 %>
             </label>
           </div>
+      
+      <% end %>
 
-      <% elsif @the_look.garment_3 != nil %>
+      <% if @the_look.garment_3 != 0 %>
 
                 <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <input class="form-check-input" type="checkbox" id="flexCheckDefault_3" name="delete_garment_3">
         <label class="form-check-label" for="flexCheckDefault">
               Garment <%= @the_look.garment_3 %>
             </label>
+      
+      <% end %>
 
-        <% elsif @the_look.garment_4 != nil %>
+        <% if @the_look.garment_4 != 0 %>
           </div>
                 <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault_3">
         <label class="form-check-label" for="flexCheckDefault">
               Garment <%= @the_look.garment_4 %>
             </label>
+      <% end %>
 
-      <% elsif @the_look.garment_5 != nil %>
+      <% if @the_look.garment_5 != 0 && @the_look.garment_5 != nil %>
           </div>
                 <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault_4">
         <label class="form-check-label" for="flexCheckDefault">
               Garment <%= @the_look.garment_5 %>
             </label>
+        <% end %>
           </div>
           </div>
-
-      <% else %>
-      <% end %>
 
     
     <%# allow users to delete each garment %>
