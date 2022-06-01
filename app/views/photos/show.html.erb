@@ -78,25 +78,30 @@
       </dd>
 
       <dt>
+      <div class="col">
         <form action="/insert_looks" method="post">
         <input type="hidden" name="garment_1" value="<%= @the_photo.id %>">
+
+        <dt>
+          Do you want to create a look using this garment?
         
-        <label for="caption_box">
-          Add a Description to your Look
-        </label>
-        <div>
-        <input type="text" id="description_box" name="query_description">
+        <dd>
+        Add a Description to your Look
+        </dd>
         </div>
+        <div class="col">
+        <input type="text" id="description_box" name="query_description">
 
         <%# ask for help %>
 
         <%# <textarea id="description_box" name="query_description"><% @the_photo.looks.description %>
         <%# </textarea>%>
-
         <button class="btn btn-primary">Create a new look using this garment</button>
+        </div>
         </form>
         
       </a>
+      </dt>
   </dt>
 
 <dt>
