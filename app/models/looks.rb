@@ -29,14 +29,14 @@ class Looks < ApplicationRecord
 
   validates(:description, { :presence => true })
 
-  validates(:garment_1, { :uniqueness => true })
+  #validates(:garment_1, { :uniqueness => true })
 
-  validates(:garment_2, { :uniqueness => true })
+  #validates(:garment_2, { :uniqueness => true })
 
-  validates(:garment_3, { :uniqueness => true })
+  #validates(:garment_3, { :uniqueness => true })
 
-  validates(:garment_4, { :uniqueness => true })
+  #validates(:garment_4, { :uniqueness => true })
 
-  validates(:garment_5, { :uniqueness => true })
+  #validates(:garment_5, { :uniqueness => true })
 
 end
