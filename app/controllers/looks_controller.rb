@@ -34,7 +34,7 @@ class LooksController < ApplicationController
       @the_look.save
       redirect_to("/looks/#{@the_look.id}", { :notice => "Look created successfully." })
     else
-      redirect_to("/looks", { :alert => the_look.errors.full_messages.to_sentence })
+      redirect_to("/garments/#{@the_look.garment_1}", { :alert => @the_look.errors.full_messages.to_sentence })
     end
   end
 
