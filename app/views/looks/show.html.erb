@@ -1,20 +1,58 @@
 <%# page with a specific look %>
 <div>
 <h1>
-<%= @the_look.person.first_name.capitalize %>'s look #<%= @the_look.id %>
+<%= @the_look.person.first_name.capitalize %>'s look '<%= @the_look.description.capitalize %>'
 </h1>
 
-    <div class="container">
-      <div class="row">
-      <div class="col">
-       <img src="<%= @the_look.first_garment.image %>">
+<p></p>
+
+  <div class="container">
+  <div class="row">
+      <div { max-height: 200px; max-width: 50%; } class="col">
+       <img src="<%= @the_look.first_garment.image %>" class="img-thumbnail">
       </div>
 
+      <% if @the_look.second_garment != nil %>
+       <div { max-height: 200px; max-width: 50%; } class="col">
+       <img src="<%= @the_look.second_garment.image %>" class="img-thumbnail">
+       <% else %>
+       </div>
+       <%end %>
+  </div>  
+
+      <% if @the_look.third_garment != nil %>
+       <div { max-height: 200px; max-width: 50%; } class="col">
+       <img src="<%= @the_look.third_garment.image %>" class="img-thumbnail">
+       </div>
+       <% else %>
+       
+       <%end %>
+
+      <% if @the_look.fourth_garment != nil %>
+       <div { max-height: 200px; max-width: 50%; } class="col">
+       <img src="<%= @the_look.fourth_garment.image %>" class="img-thumbnail">
+        </div>
+       <% else %>
+      
+       <%end %>
+
+      </div>
+      
+      <div class="row">
+      <div { max-height: 200px; max-width: 50%; } class="col">
+        <% if @the_look.fifth_garment != nil %>
        <div class="col">
+       <img src="<%= @the_look.fifth_garment.image %>" class="img-thumbnail">
+      </div>
+       <% else %>
+       <%end %>
+
     <dl>
       <dt>
   
-  <label for="garment_2">Add another garment</label>
+  
+  <form action="/modify_look/<%= @the_look.id %>" method="post">
+  <label for="garment_2">Add second garment</label>
     <select class="form-select" aria-label="Default select example" name="query_garment_2">
     <option selected>Open this select menu</option>
       <% Photo.all.each do |a_photo| %>
@@ -23,11 +61,52 @@
   </option>
   <% end %>
   </select>
+
+  <form action="/modify_look/<%= @the_look.id %>" method="post">
+  <label for="garment_3">Add third garment</label>
+    <select class="form-select" aria-label="Default select example" name="query_garment_3">
+    <option selected>Open this select menu</option>
+      <% Photo.all.each do |a_photo| %>
+  <option value="<%= a_photo.id %>">
+  <%= a_photo.caption %>
+  </option>
+  <% end %>
+  </select>
+
+
+    <form action="/modify_look/<%= @the_look.id %>" method="post">
+  <label for="garment_2">Add fourth garment</label>
+    <select class="form-select" aria-label="Default select example" name="query_garment_4">
+    <option selected>Open this select menu</option>
+      <% Photo.all.each do |a_photo| %>
+  <option value="<%= a_photo.id %>">
+  <%= a_photo.caption %>
+  </option>
+  <% end %>
+  </select>
+
+
+  <form action="/modify_look/<%= @the_look.id %>" method="post">
+  <label for="garment_2">Add fifth garment</label>
+    <select class="form-select" aria-label="Default select example" name="query_garment_5">
+    <option selected>Open this select menu</option>
+      <% Photo.all.each do |a_photo| %>
+  <option value="<%= a_photo.id %>">
+  <%= a_photo.caption %>
+  </option>
+  <% end %>
+  </select>
+
+   
+  <button>Add this to your look!</button>
+ 
     </div>
-    <div class="col">
-            <button>Add this to your look!</button>
-    </div>
+
+    <input type="hidden" name="query_garment_1" value="<%= @the_look.garment_1 %>">
+    <input type="hidden" name="query_description" value="<%= @the_look.description %>">
+
 </div>
+</form>
 
 <%# if garment_2 is selected
 
@@ -87,34 +166,16 @@ hide
 
         <input type="title" id="garment_1_box" name="query_garment_1" value="<%= @the_look.garment_1 %>">
 
-        <% if @the_look.garment_2 != nil %>
-        <input type="title" id="garment_1_box" name="query_garment_1" value="<%= @the_look.garment_2 %>">
+        <input type="title" id="garment_2_box" name="query_garment_2" value="<%= @the_look.garment_2 %>">
 
-        <% else %>
-        <%end %>
+        <input type="title" id="garment_3_box" name="query_garment_3" value="<%= @the_look.garment_3 %>">
 
-        <% if @the_look.garment_3 != nil %>
+        <input type="title" id="garment_4_box" name="query_garment_4" value="<%= @the_look.garment_4 %>">
 
-        <input type="title" id="garment_1_box" name="query_garment_1" value="<%= @the_look.garment_3 %>">
+        <input type="title" id="garment_5_box" name="query_garment_2" value="<%= @the_look.garment_5 %>">
 
-        <% else %>
-        <%end %>
-
-        <% if @the_look.garment_4 != nil %>
-
-        <input type="title" id="garment_1_box" name="query_garment_1" value="<%= @the_look.garment_4 %>">
-
-        <% else %>
-        <%end %>
-
-        <% if @the_look.garment_5 != nil %>
-
-        <input type="title" id="garment_1_box" name="query_garment_1" value="<%= @the_look.garment_5 %>">
-
-        <% else %>
-        <%end %>
-
-
+    
+    <%# allow users to delete each garment %>
 
     </div>
 
@@ -123,7 +184,7 @@ hide
           Description
         </label>
 
-        <textarea id="caption_box" name="query_caption"><%= @the_look.description %></textarea>
+        <textarea id="caption_box" name="query_description"><%= @the_look.description %></textarea>
       </div>
 
       <div>

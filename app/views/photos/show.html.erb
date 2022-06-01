@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Garment #<%= @the_photo.id %> details
+      Garment '<%= @the_photo.caption.capitalize %>' details
     </h1>
 
 
@@ -78,14 +78,24 @@
       </dd>
 
       <dt>
-      <% if %>
         <form action="/insert_looks" method="post">
         <input type="hidden" name="garment_1" value="<%= @the_photo.id %>">
+        
+        <label for="caption_box">
+          Add a Description to your Look
+        </label>
+        <div>
+        <input type="text" id="description_box" name="query_description">
+        </div>
+
+        <%# ask for help %>
+
+        <%# <textarea id="description_box" name="query_description"><% @the_photo.looks.description %>
+        <%# </textarea>%>
+
         <button class="btn btn-primary">Create a new look using this garment</button>
         </form>
-      <% else %>
         
-      <% end %>
       </a>
   </dt>
 
@@ -129,16 +139,8 @@
 
     <form action="/modify_garment/<%= @the_photo.id %>"  method="post" >
       <div>
-        <label for="image_box">
-          Image
-        </label>
-
-        <input type="text" id="image_box" name="query_image" value="<%= @the_photo.image %>">
-      </div>
-
-      <div>
         <label for="caption_box">
-          Caption
+          Description
         </label>
 
         <textarea id="caption_box" name="query_caption"><%= @the_photo.caption %></textarea>
@@ -151,6 +153,9 @@
       <button>
         Update photo
       </button>
+
+    <input type="hidden" name="query_image" value="<%# not sure which value to put here %>">
+
     </form>
   </div>
 </div>

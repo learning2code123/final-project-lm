@@ -28,6 +28,7 @@ class LooksController < ApplicationController
     @the_look.garment_3 = params.fetch("garment_3", nil)
     @the_look.garment_4 = params.fetch("garment_4", nil)
     @the_look.garment_5 = params.fetch("garment_5", nil)
+    @the_look.description = params.fetch("query_description")
 
     if @the_look.valid?
       @the_look.save
@@ -42,8 +43,13 @@ class LooksController < ApplicationController
     the_id = params.fetch("path_id")
     @the_look = Looks.where({ :id => the_id }).at(0)
 
-    @the_look.user_id = session.fetch(:owner_id)
-    @the_look.garment_1 = params.fetch("garment_1")
+    @the_look.owner_id = session.fetch(:user_id)
+    @the_look.garment_1 = params.fetch("query_garment_1")
+    @the_look.description = params.fetch("query_description")
+    @the_look.garment_2 = params.fetch("query_garment_2", nil)
+    @the_look.garment_3 = params.fetch("query_garment_3", nil)
+    @the_look.garment_4 = params.fetch("query_garment_4", nil)
+    @the_look.garment_5 = params.fetch("query_garment_5", nil)
 
     if @the_look.valid?
       @the_look.save

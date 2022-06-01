@@ -8,7 +8,11 @@ class PhotosController < ApplicationController
     #@q = Photo.ransack(params[:q])
     #@list_of_photos = @q.result
 
-    @list_of_photos = matching_photos.order({ :created_at => :desc })
+    current_user = session.fetch(:user_id)
+    
+    
+
+    @list_of_photos = @current_user.garments.order({ :created_at => :desc })
 
     render({ :template => "photos/index.html.erb" })
 

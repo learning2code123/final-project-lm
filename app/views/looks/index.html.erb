@@ -8,15 +8,7 @@
     <table border="1">
       <tr>
         <th>
-          ID
-        </th>
-
-        <th>
-          User
-        </th>
-
-        <th>
-          Look
+          Description
         </th>
 
         <th>
@@ -37,16 +29,9 @@
 
       <% @list_of_looks.each do |a_look| %>
       <tr>
-        <td>
-          <%= a_look.id %>
-        </td>
 
         <td>
-          <%= a_look.person.first_name %>
-        </td>
-
-        <td>
-          <%= a_look.first_garment.id %>
+          <%= a_look.description %>
         </td>
 
         <td>
