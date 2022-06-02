@@ -91,9 +91,11 @@ class LooksController < ApplicationController
   def suggestions
 
     the_id = params.fetch("path_id")
-    @the_look_suggestions = Looks.where({ :id => the_id }).at(0)
+    matching_looks = Looks.where({ :id => the_id })
 
-    @algorithm_check = @the_look_suggestions
+    @the_look = matching_looks.at(0)
+
+    
 
 
 

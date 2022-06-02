@@ -1,10 +1,13 @@
-<%# Photo.all.where.not({ :id => [ @the_look.garment_1.hex_code, @the_look.garment_2 ] }).each do |a_photo| %>
-<%# a_photo.hex_code %>
+hi fetch garment 1 number <%= garment_1_look = @the_look.garment_1 %>
+hi look it up in Photo database <%= matching_garments = Photo.where({ :id => garment_1_look }) %>
+hi hex code of G1 extracted from Photo Database <%= garment_1_base_color = matching_garments.at(0).hex_code %>
+hi find hex code in color combination database (base color column) <% g1_base_colorcomb = ColorCombination.where({ :base_color_hex => garment_1_base_color }) %>
+hi get the first item of the color combination match <%= matching_g1 = g1_base_colorcomb.at(0) %>
 
 
+<%# each do |a_photo| %>
+<%# end %>
 
-
-<hr>
 <%# page with a specific look %>
 <div>
 <h1>
