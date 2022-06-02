@@ -64,6 +64,10 @@
       <dt>
   
 
+<% if @the_look.second_garment.id != 0 && @the_look.third_garment.id != 0 && @the_look.fourth_garment.id != 0 && @the_look.fifth_garment.id != 0 %>
+
+<% else %>
+
   <hr>
   <h1> Zelia's suggestions for this look</h1>
   <p style="color:red">*Please note that suggestions change as you add garments to your look</p>
@@ -162,11 +166,13 @@ hi create a list with the records (combination colors) that match base color <% 
       <a href="/garments/<%= a_final_output.id %>">
        <img src="<%= a_final_output.image %>" class="img-thumbnail" width = "300" height = "300">
        </a>
+       <p><%= a_final_output.caption.capitalize %></p>
        </div>
        <% end %>
   </div>
   </div>
-      
+
+ <% end  %>
 
   <hr>
 
@@ -348,7 +354,6 @@ hi create a list with the records (combination colors) that match base color <% 
       <div>
         <form action="/delete_look/<%= @the_look.id %>">
         <button type="submit" class="btn btn-danger">
-        <%# <a href="/delete_garment/<%= @the_photo.id %>
           Delete Look</button>
         </form>
       </div>

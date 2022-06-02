@@ -20,10 +20,6 @@ class PhotosController < ApplicationController
 
   def show
 
-    #unless PhotoPolicy.new(current_user, @photo).show?
-      #raise Pundit::NotAuthorizedError, "not allowed"
-    #end
-
     the_id = params.fetch("path_id")
 
     matching_photos = Photo.where({ :id => the_id })

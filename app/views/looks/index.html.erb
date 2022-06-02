@@ -3,10 +3,11 @@
 <h1><%= @current_user.first_name.capitalize %>'s looks</h1>
 
 <hr>
-<button>
-        <a href="/garments">Create new Look</a>
+<form action="/garments" class="form-horizontal" enctype="multipart/form-data">
+<button class="btn btn-primary">
+        Select a garment to create a new look
 </button>
-<%# redirect to garments with a notice => select a garment to create a look %>
+</form>
 <hr>
 
 <div>
