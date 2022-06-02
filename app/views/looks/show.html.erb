@@ -105,24 +105,6 @@
 <% a_matching_color_second.hex_code %>
 <% end %>
 
-
-
-<%# if Photo.where({ :hex_code =>  }) == algorithm_recommended_colors %>
-
-<%# elsif Photo.hex_code == NeutralColor.hex_code %>
-
-<%# else %>
-
-<%# end %>
-
-<%# hi get the first item of the color combination match <%= matching_g1 = g1_base_colorcomb.at(0) %>
-<%# <p>
-hi create a list with the records (combination colors) that match base color <% g1_base_colorcomb.each do |a_matching_color| %>
-<%#= a_matching_color.hex_combination_color %>
-<%# end %>
-
-<%# next: 1) Save this hex codes; 2) Photo.all.where to find which garments have those hex codes; 3) if they have, move to validation of type, else blank (is not going to show up at suggestions) %>
-
 <%# VALIDATION OF TYPES %>
 
 <%# STEP 8 - Fetch Garment 1 number from "The Look" table/database %>
