@@ -5,10 +5,19 @@ hex code of G1 extracted from Photo Database <%= garment_1_base_color = matching
 
 find hex code in color combination database (base color column) <% g1_base_colorcomb = ColorCombination.where({ :base_color_hex => garment_1_base_color }) %>
 hex codes <p><%= hex_codes_generated = g1_base_colorcomb.pluck(:hex_combination_color) %></p>
-<p><%= algorithm_recommended_colors = Photo.where({ :hex_code => hex_codes_generated }) %></p>
+<p><%= algorithm_recommended_colors = Photo.where({ :hex_code => hex_codes_generated }).inspect %></p>
 
+<% if Photo.hex_code == algorithm_recommended_colors %>
 
+it's a match
 
+<% elsif Photo.hex_code == NeutralColor.hex_code %>
+
+<% else %>
+
+Show nothing
+
+<% end %>
 
 
 
