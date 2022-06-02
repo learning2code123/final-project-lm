@@ -27,6 +27,23 @@
         <%= @the_photo.caption.capitalize %>
       </dd>
 
+      <dt>
+        Color
+      </dt>
+      <dd>
+      <% if @the_photo.hex_code != 0 && @the_photo.hex_code != nil %>
+        <% photo_color = @the_photo.hex_code %>
+        <% matching_color = Color.where({ :hex_code => photo_color }) %>
+        <%= garment_color_name = matching_color.at(0).color_name.capitalize %>
+
+        <% else %>
+
+        <p style="color:red">Please update your Look's color below</p>
+
+        <% end %>
+
+      </dd>
+
 
       <dt>
         Created at
