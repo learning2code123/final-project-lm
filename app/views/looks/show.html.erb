@@ -1,43 +1,4 @@
 
-
-
-
-
-
-
-
-<%# next: 1) if garment_1_type == x, then show options that match x, else blank %>
-
-<%# TYPE RULES
-Bodysuit + Pants
-Bodysuit + Pants + Jackets and Coats
-Bodysuit + Pants + Vests
-Bodysuit + Shorts
-Bodysuit + Shorts + Jackets and Coats
-Bodysuit + Shorts + Vests
-Bodysuit + Skirts
-Bodysuit + Skirts + Jackets and Coats
-Bodysuit + Skirts + Vests
-Tops + Pants
-Tops + Pants + Jackets and Coats
-Tops + Pants + Vests
-Tops + Shorts
-Tops + Shorts + Jackets and Coats
-Tops + Shorts + Vests
-Tops + Skirts
-Tops + Skirts + Jackets and Coats
-Tops + Skirts + Vests
-Dress
-Jumpsuit
-Dress + Jackets and Coats
-Dress + Vests
-Jumpsuit + Jackets and Coats
-Jumpsuit + Vests
- %>
-
-
-
-
 <%# page with a specific look %>
 <div>
 <h1>
@@ -192,42 +153,22 @@ hi create a list with the records (combination colors) that match base color <% 
 
 <%#STEP 16 - create a list with the final outputs and show the image of each photo that has passed this algorithm's test %>
 
-<% final_output.each do |a_final_output| %>
-<%= a_final_output.image %>
 
-
-
-  <div class="card-group">
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
+  <div class="container">
+  <div class="row">
+  <% final_output.each do |a_final_output| %>
+  <div class="col-md-4">
+      <a href="/garments/<%= a_final_output.id %>">
+       <img src="<%= a_final_output.image %>" class="img-fluid">
+       </a>
+       </div>
+       <% end %>
   </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
   </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-</div>
+      
+    
 
-<% end %>
+
 
 
 
