@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_02_180839) do
+ActiveRecord::Schema.define(version: 2022_06_02_195851) do
 
   create_table "a_garment_types", force: :cascade do |t|
     t.string "garment_type_name"
@@ -76,6 +76,14 @@ ActiveRecord::Schema.define(version: 2022_06_02_180839) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "garment_type"
     t.string "hex_code"
+  end
+
+  create_table "type_possible_combinations", force: :cascade do |t|
+    t.string "type_garment_1"
+    t.string "type_garment_2"
+    t.string "type_garment_3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

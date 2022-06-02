@@ -5,19 +5,32 @@ hex code of G1 extracted from Photo Database <%= garment_1_base_color = matching
 
 find hex code in color combination database (base color column) <% g1_base_colorcomb = ColorCombination.where({ :base_color_hex => garment_1_base_color }) %>
 hex codes <p><%= hex_codes_generated = g1_base_colorcomb.pluck(:hex_combination_color) %></p>
-<p><%= algorithm_recommended_colors = Photo.where({ :hex_code => hex_codes_generated }).inspect %></p>
+<p><%= algorithm_recommended_colors = Photo.where({ :hex_code => hex_codes_generated }) %></p>
 
-<% if Photo.hex_code == algorithm_recommended_colors %>
+<% algorithm_recommended_colors.each do |a_matching_color_second| %>
+<h1><%= a_matching_color_second.hex_code %></h1>
+<% end %>
+
+<h1>
+
+
+
+
+
+</h1>
+
+
+<%# if Photo.where({ :hex_code =>  }) == algorithm_recommended_colors %>
 
 it's a match
 
-<% elsif Photo.hex_code == NeutralColor.hex_code %>
+<%# elsif Photo.hex_code == NeutralColor.hex_code %>
 
-<% else %>
+<%# else %>
 
 Show nothing
 
-<% end %>
+<%# end %>
 
 
 
@@ -32,7 +45,29 @@ hi create a list with the records (combination colors) that match base color <% 
 
 hi fetch garment 1 number <%= garment_1_type = @the_look.garment_1 %>
 hi look it up in Photo database <%= matching_types = Photo.where({ :id => garment_1_type }) %>
-hi hex code of G1 extracted from Photo Database <%= garment_1_type = matching_types.at(0).garment_type %>
+hi type of G1 extracted from Photo Database <%= garment_1_type = matching_types.at(0).garment_type %>
+
+<% first_step_type = TypePossibleCombination.where({ :type_garment_1 => garment_1_type }) %>
+<h1><%= first_step_type %></h1>
+
+garment type 2 <%= garment_type_second_step = first_step_type.pluck(:type_garment_2).uniq %></p>
+
+garment type 3 <%= garment_type_third_step = first_step_type.pluck(:type_garment_3).uniq %></p>
+
+<%= all_garment_that_match = garment_type_second_step + garment_type_third_step %>
+
+<%= final_output = algorithm_recommended_colors.where({ :garment_type => all_garment_that_match }) %>
+
+<% final_output.each do |a_final_output| %>
+<%= a_final_output.image %>
+
+<% end %>
+
+
+
+
+
+
 
 <%# next: 1) if garment_1_type == x, then show options that match x, else blank %>
 

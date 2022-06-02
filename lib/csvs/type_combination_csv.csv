@@ -1,0 +1,111 @@
+﻿type_garment_1,type_garment_2,type_garment_3
+Bodysuit,Pants,
+Bodysuit,Pants,Jackets and Coats
+Bodysuit,Pants,Vests
+Bodysuit,Shorts,
+Bodysuit,Shorts,Jackets and Coats
+Bodysuit,Shorts,Vests
+Bodysuit,Skirts,
+Bodysuit,Skirts,Jackets and Coats
+Bodysuit,Skirts,Vests
+Tops,Pants,
+Tops,Pants,Jackets and Coats
+Tops,Pants,Vests
+Tops,Shorts,
+Tops,Shorts,Jackets and Coats
+Tops,Shorts,Vests
+Tops,Skirts,
+Tops,Skirts,Jackets and Coats
+Tops,Skirts,Vests
+Dress,Jackets and Coats,
+Dress,Vests,
+Jumpsuit,Jackets and Coats,
+Jumpsuit,Vests,
+Bodysuit,Pants,
+Bodysuit,Pants,Jackets and Coats
+Bodysuit,Pants,Vests
+Bodysuit,Shorts,
+Bodysuit,Shorts,Jackets and Coats
+Bodysuit,Shorts,Vests
+Bodysuit,Skirts,
+Bodysuit,Skirts,Jackets and Coats
+Bodysuit,Skirts,Vests
+Tops,Pants,
+Tops,Pants,Jackets and Coats
+Tops,Pants,Vests
+Tops,Shorts,
+Tops,Shorts,Jackets and Coats
+Tops,Shorts,Vests
+Tops,Skirts,
+Tops,Skirts,Jackets and Coats
+Tops,Skirts,Vests
+Pants,Bodysuit,
+Pants,Bodysuit,Jackets and Coats
+Pants,Bodysuit,Vests
+Shorts,Bodysuit,
+Shorts,Bodysuit,Jackets and Coats
+Shorts,Bodysuit,Vests
+Skirts,Bodysuit,
+Skirts,Bodysuit,Jackets and Coats
+Skirts,Bodysuit,Vests
+Pants,Tops,
+Pants,Tops,Jackets and Coats
+Pants,Tops,Vests
+Shorts,Tops,
+Shorts,Tops,Jackets and Coats
+Shorts,Tops,Vests
+Skirts,Tops,
+Skirts,Tops,Jackets and Coats
+Skirts,Tops,Vests
+Jackets and Coats,Dress,Jackets and Coats
+Vests,Dress,Vests
+Jackets and Coats,Jumpsuit,Jackets and Coats
+Vests,Jumpsuit,Vests
+Pants,Jackets and Coats,Bodysuit
+Pants,Vests,Bodysuit
+Shorts,Jackets and Coats,Bodysuit
+Shorts,Vests,Bodysuit
+Skirts,Jackets and Coats,Bodysuit
+Skirts,Vests,Bodysuit
+Pants,Jackets and Coats,Tops
+Pants,Vests,Tops
+Shorts,Jackets and Coats,Tops
+Shorts,Vests,Tops
+Skirts,Jackets and Coats,Tops
+Skirts,Vests,Tops
+Jackets and Coats,Jackets and Coats,Dress
+Vests,Vests,Dress
+Jackets and Coats,Jackets and Coats,Jumpsuit
+Vests,Vests,Jumpsuit
+Jackets and Coats,Pants,Bodysuit
+Vests,Pants,Bodysuit
+Jackets and Coats,Shorts,Bodysuit
+Vests,Shorts,Bodysuit
+Jackets and Coats,Skirts,Bodysuit
+Vests,Skirts,Bodysuit
+Jackets and Coats,Pants,Tops
+Vests,Pants,Tops
+Jackets and Coats,Shorts,Tops
+Vests,Shorts,Tops
+Jackets and Coats,Skirts,Tops
+Vests,Skirts,Tops
+Jackets and Coats,Jackets and Coats,Dress
+Vests,Vests,Dress
+Jackets and Coats,Jackets and Coats,Jumpsuit
+Vests,Vests,Jumpsuit
+Jackets and Coats,Bodysuit,Pants
+Vests,Bodysuit,Pants
+Jackets and Coats,Bodysuit,Shorts
+Vests,Bodysuit,Shorts
+Jackets and Coats,Bodysuit,Skirts
+Vests,Bodysuit,Skirts
+Jackets and Coats,Tops,Pants
+Vests,Tops,Pants
+Jackets and Coats,Tops,Shorts
+Vests,Tops,Shorts
+Jackets and Coats,Tops,Skirts
+Vests,Tops,Skirts
+Jackets and Coats,Dress,Jackets and Coats
+Vests,Dress,Vests
+Jackets and Coats,Jumpsuit,Jackets and Coats
+Vests,Jumpsuit,Vests

@@ -30,6 +30,8 @@ namespace :slurp do
 
     require "csv"
 
+    ColorCombination.destroy_all
+
     csv_text = File.read(Rails.root.join("lib", "csvs", "combinations_csv.csv"))
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
 
@@ -99,6 +101,30 @@ puts "There are now #{NeutralColor.count} rows in the transactions table"
 
 end
 
+task type_possible_combinations: :environment do
+
+  require "csv"
+
+  TypePossibleCombination.destroy_all
+
+  csv_text = File.read(Rails.root.join("lib", "csvs", "type_combination_csv.csv"))
+  csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
+  first_header = csv.headers.first
+  csv.each do |row|
+  tc = TypePossibleCombination.new
+  tc.type_garment_1 = row[first_header]
+  tc.type_garment_2 = row["type_garment_2"]
+  tc.type_garment_3 = row["type_garment_3"]
+  tc.save
+
+  puts "#{tc.type_garment_1}, saved"
+  end
+
+  p csv.headers
+
+puts "There are now #{TypePossibleCombination.count} rows in the transactions table"
+
+end
 
 
 end
