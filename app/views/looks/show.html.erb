@@ -1,67 +1,4 @@
-Algorithm (in construction)
-fetch garment 1 number <%= garment_1_look = @the_look.garment_1 %>
-look it up in Photo database <%= matching_garments = Photo.where({ :id => garment_1_look }) %>
-hex code of G1 extracted from Photo Database <%= garment_1_base_color = matching_garments.at(0).hex_code %>
 
-find hex code in color combination database (base color column) <% g1_base_colorcomb = ColorCombination.where({ :base_color_hex => garment_1_base_color }) %>
-hex codes <p><%= hex_codes_generated = g1_base_colorcomb.pluck(:hex_combination_color) %></p>
-<p><%= algorithm_recommended_colors = Photo.where({ :hex_code => hex_codes_generated }) %></p>
-
-<% algorithm_recommended_colors.each do |a_matching_color_second| %>
-<h1><%= a_matching_color_second.hex_code %></h1>
-<% end %>
-
-<h1>
-
-
-
-
-
-</h1>
-
-
-<%# if Photo.where({ :hex_code =>  }) == algorithm_recommended_colors %>
-
-it's a match
-
-<%# elsif Photo.hex_code == NeutralColor.hex_code %>
-
-<%# else %>
-
-Show nothing
-
-<%# end %>
-
-
-
-<%# hi get the first item of the color combination match <%= matching_g1 = g1_base_colorcomb.at(0) %>
-<p>
-hi create a list with the records (combination colors) that match base color <% g1_base_colorcomb.each do |a_matching_color| %>
-<%= a_matching_color.hex_combination_color %>
-<% end %>
-</p>
-
-<%# next: 1) Save this hex codes; 2) Photo.all.where to find which garments have those hex codes; 3) if they have, move to validation of type, else blank (is not going to show up at suggestions) %>
-
-hi fetch garment 1 number <%= garment_1_type = @the_look.garment_1 %>
-hi look it up in Photo database <%= matching_types = Photo.where({ :id => garment_1_type }) %>
-hi type of G1 extracted from Photo Database <%= garment_1_type = matching_types.at(0).garment_type %>
-
-<% first_step_type = TypePossibleCombination.where({ :type_garment_1 => garment_1_type }) %>
-<h1><%= first_step_type %></h1>
-
-garment type 2 <%= garment_type_second_step = first_step_type.pluck(:type_garment_2).uniq %></p>
-
-garment type 3 <%= garment_type_third_step = first_step_type.pluck(:type_garment_3).uniq %></p>
-
-<%= all_garment_that_match = garment_type_second_step + garment_type_third_step %>
-
-<%= final_output = algorithm_recommended_colors.where({ :garment_type => all_garment_that_match }) %>
-
-<% final_output.each do |a_final_output| %>
-<%= a_final_output.image %>
-
-<% end %>
 
 
 
@@ -169,22 +106,96 @@ Jumpsuit + Vests
   <hr>
   <h1> Zelia's suggestions for this look</h1>
   <p style="color:red">*Please note that suggestions change as you add garments to your look</p>
+
+  <%# COLOR COMBINING ALGORITHM %>
+
+  <%#VALIDATION OF COLORS %>
+
+  <%# STEP 1 - Fetch Garment 1 number from "The Look" table/database %>
   
-  <%# list_of_combinations each do |a_combination| %>
+  <% garment_1_look = @the_look.garment_1 %>
 
-  <%# div class="container">
-  <div class="row">
-  <% @list_of_photos.each do |a_photo| %>
-    <%# <div class="col-md-4">
-      <a href="/garments/<%= a_photo.id %>
-      <%# <img src="<%# a_photo.image %> <%#" class="img-fluid">
-      </a>
-    </div>
+  <%# STEP 2 - Look Garment 1'd ID in the Photo table/database%>
+
+  <% matching_garments = Photo.where({ :id => garment_1_look }) %>
+
+  <%#STEP 3 - Get the hex code of Garment 1 through the Photo table/database %>
+
+  <% garment_1_base_color = matching_garments.at(0).hex_code %>
+
+  <%# STEP 4 - Find the hex code found in step 3 in the Color Combination table/database through the base_color column %>
+
+<% g1_base_colorcomb = ColorCombination.where({ :base_color_hex => garment_1_base_color }) %>
+
+  <%# STEP 5 - Use the base color hex code found in step 4 to find all combinations in the Color Combination table/database listed in the hex_combination_color column %>
+
+<% hex_codes_generated = g1_base_colorcomb.pluck(:hex_combination_color) %>
+
+<%# STEP 6 - Use the hex codes found in step 5 to find Photos(Garments) that have the same matching hex code %>
+<% algorithm_recommended_colors = Photo.where({ :hex_code => hex_codes_generated }) %>
+
+<%#STEP 7 - Generate a list of each matching color for the second/third/fourth/fifth garment %>
+
+<% algorithm_recommended_colors.each do |a_matching_color_second| %>
+<% a_matching_color_second.hex_code %>
 <% end %>
- <%#</div>
-</div>
 
-  <%# img_src=<%# a_combination.image> %>
+
+
+<%# if Photo.where({ :hex_code =>  }) == algorithm_recommended_colors %>
+
+<%# elsif Photo.hex_code == NeutralColor.hex_code %>
+
+<%# else %>
+
+<%# end %>
+
+<%# hi get the first item of the color combination match <%= matching_g1 = g1_base_colorcomb.at(0) %>
+<%# <p>
+hi create a list with the records (combination colors) that match base color <% g1_base_colorcomb.each do |a_matching_color| %>
+<%#= a_matching_color.hex_combination_color %>
+<%# end %>
+
+<%# next: 1) Save this hex codes; 2) Photo.all.where to find which garments have those hex codes; 3) if they have, move to validation of type, else blank (is not going to show up at suggestions) %>
+
+<%# VALIDATION OF TYPES %>
+
+<%# STEP 8 - Fetch Garment 1 number from "The Look" table/database %>
+
+<% garment_1_type = @the_look.garment_1 %>
+
+<%# STEP 9 - Look Garment 1'd ID in the Photo table/database %>
+<% matching_types = Photo.where({ :id => garment_1_type }) %>
+
+<%#STEP 10 - Extract Type from Photo table/database %>
+<% garment_1_type = matching_types.at(0).garment_type %>
+
+<%#STEP 11 - Find the garment's type in the Type Possible Combination table/database through column garment_1_type %>
+
+<% first_step_type = TypePossibleCombination.where({ :type_garment_1 => garment_1_type }) %>
+
+<%#STEP 12 - Find the types of garments that match garment 1's type through the Type Possible Combination table/database, type_garment_2 column %>
+
+<% garment_type_second_step = first_step_type.pluck(:type_garment_2).uniq %>
+
+<%#STEP 13 - Find the types of garments that match garment 1's type through the Type Possible Combination table/database, type_garment_3 column %>
+
+<% garment_type_third_step = first_step_type.pluck(:type_garment_3).uniq %>
+
+<%# STEP 14 - Unite the arrays generated in steps 12 and 13 %>
+
+<% all_garment_that_match = garment_type_second_step + garment_type_third_step %>
+
+<%#STEP 15 - Find in the list of garments (photos) with the validated recommended colors the ones that have types that were listed in step 14 %>
+
+<% final_output = algorithm_recommended_colors.where({ :garment_type => all_garment_that_match }) %>
+
+<%#STEP 16 - create a list with the final outputs and show the image of each photo that has passed this algorithm's test %>
+
+<% final_output.each do |a_final_output| %>
+<%= a_final_output.image %>
+
+
 
   <div class="card-group">
   <div class="card">
@@ -216,7 +227,7 @@ Jumpsuit + Vests
   </div>
 </div>
 
-
+<% end %>
 
 
 
