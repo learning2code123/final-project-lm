@@ -153,28 +153,20 @@ hi create a list with the records (combination colors) that match base color <% 
 
 <%#STEP 16 - create a list with the final outputs and show the image of each photo that has passed this algorithm's test %>
 
+<%# This is the test of step 16, also described below: last_output = final_output.where.not({ :id => [ @the_look.garment_1, @the_look.garment_2, @the_look.garment_3, @the_look.garment_4, @the_look.garment_5 ] }). each do |a_test| %>
 
   <div class="container">
   <div class="row">
-  <% final_output.each do |a_final_output| %>
+  <% last_output = final_output.where.not({ :id => [ @the_look.garment_1, @the_look.garment_2, @the_look.garment_3, @the_look.garment_4, @the_look.garment_5 ] }). each do |a_final_output| %>
   <div class="col-md-4">
       <a href="/garments/<%= a_final_output.id %>">
-       <img src="<%= a_final_output.image %>" class="img-fluid">
+       <img src="<%= a_final_output.image %>" class="img-thumbnail" width = "300" height = "300">
        </a>
        </div>
        <% end %>
   </div>
   </div>
       
-    
-
-
-
-
-
-
-
-
 
   <hr>
 
@@ -189,8 +181,7 @@ hi create a list with the records (combination colors) that match base color <% 
   <label for="garment_2">Add second garment</label>
     <select class="form-select" aria-label="Default select example" name="query_garment_2">
     <option selected></option>
-    <%# add rest of garments below %>
-      <% Photo.all.where.not({ :id => [ @the_look.garment_1, @the_look.garment_2, @the_look.garment_3, @the_look.garment_5 ] }).each do |a_photo| %>
+      <% Photo.all.where.not({ :id => [ @the_look.garment_1, @the_look.garment_2, @the_look.garment_3, @the_look.garment_4, @the_look.garment_5 ] }).each do |a_photo| %>
   <option value="<%= a_photo.id %>">
   <%= a_photo.caption %>
   </option>
