@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_01_221732) do
+ActiveRecord::Schema.define(version: 2022_06_02_180839) do
 
   create_table "a_garment_types", force: :cascade do |t|
     t.string "garment_type_name"
@@ -55,6 +55,17 @@ ActiveRecord::Schema.define(version: 2022_06_01_221732) do
     t.integer "garment_3"
     t.integer "garment_4"
     t.integer "garment_5"
+  end
+
+  create_table "neutral_colors", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "category"
+    t.string "color_name"
+    t.string "hex_code"
+    t.integer "code_r"
+    t.integer "code_g"
+    t.integer "code_b"
   end
 
   create_table "photos", force: :cascade do |t|

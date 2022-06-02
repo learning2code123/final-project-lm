@@ -1,11 +1,13 @@
-hi fetch garment 1 number <%= garment_1_look = @the_look.garment_1 %>
-hi look it up in Photo database <%= matching_garments = Photo.where({ :id => garment_1_look }) %>
-hi hex code of G1 extracted from Photo Database <%= garment_1_base_color = matching_garments.at(0).hex_code %>
-<% neutral_colors %>
+Algorithm (in construction)
+fetch garment 1 number <%= garment_1_look = @the_look.garment_1 %>
+look it up in Photo database <%= matching_garments = Photo.where({ :id => garment_1_look }) %>
+hex code of G1 extracted from Photo Database <%= garment_1_base_color = matching_garments.at(0).hex_code %>
 
-hi find hex code in color combination database (base color column) <% g1_base_colorcomb = ColorCombination.where({ :base_color_hex => garment_1_base_color }) %>
+find hex code in color combination database (base color column) <% g1_base_colorcomb = ColorCombination.where({ :base_color_hex => garment_1_base_color }) %>
 hex codes <p><%= hex_codes_generated = g1_base_colorcomb.pluck(:hex_combination_color) %></p>
-<p><%= recommended_colors = Photo.where({ :hex_code => hex_codes_generated }).inspect %></p>
+<p><%= algorithm_recommended_colors = Photo.where({ :hex_code => hex_codes_generated }) %></p>
+
+
 
 
 

@@ -76,6 +76,29 @@ puts "There are now #{AGarmentType.count} rows in the transactions table"
 
 end
 
+task neutral_colors: :environment do
+
+  require "csv"
+
+  csv_text = File.read(Rails.root.join("lib", "csvs", "neutral_colors_csv.csv"))
+  csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
+  csv.each do |row|
+  ne = NeutralColor.new
+  ne.category = row["category"]
+  ne.color_name = row["color_name"]
+  ne.hex_code = row["hex_code"]
+  ne.code_r = row["code_r"]
+  ne.code_g = row["code_g"]
+  ne.code_b = row["code_r"]
+  ne.save
+
+  puts "#{ne.color_name}, saved"
+  end
+
+puts "There are now #{NeutralColor.count} rows in the transactions table"
+
+end
+
 
 
 end

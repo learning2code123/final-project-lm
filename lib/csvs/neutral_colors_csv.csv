@@ -1,0 +1,6 @@
+﻿category,color_name,hex_code,code_r,code_g,code_b
+cat_000,black,#000000,0,0,0
+cat_032,charcoal,#6A757B,106,117,123
+cat_033,gray,#B2B7BB,178,183,187
+cat_034,white,#FFFFFF,255,255,255
+cat_035,cream,#F9F0E1,249,240,225
