@@ -2,8 +2,12 @@ hi fetch garment 1 number <%= garment_1_look = @the_look.garment_1 %>
 hi look it up in Photo database <%= matching_garments = Photo.where({ :id => garment_1_look }) %>
 hi hex code of G1 extracted from Photo Database <%= garment_1_base_color = matching_garments.at(0).hex_code %>
 hi find hex code in color combination database (base color column) <% g1_base_colorcomb = ColorCombination.where({ :base_color_hex => garment_1_base_color }) %>
-hi get the first item of the color combination match <%= matching_g1 = g1_base_colorcomb.at(0) %>
-
+<%# hi get the first item of the color combination match <%= matching_g1 = g1_base_colorcomb.at(0) %>
+<p>
+hi create a list with the records (combination colors) that match base color <% g1_base_colorcomb.each do |a_matching_color| %>
+<%= a_matching_color.combination_color_name %>
+<% end %>
+</p>
 
 <%# each do |a_photo| %>
 <%# end %>
