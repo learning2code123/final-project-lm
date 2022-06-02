@@ -5,7 +5,7 @@ hi find hex code in color combination database (base color column) <% g1_base_co
 <%# hi get the first item of the color combination match <%= matching_g1 = g1_base_colorcomb.at(0) %>
 <p>
 hi create a list with the records (combination colors) that match base color <% g1_base_colorcomb.each do |a_matching_color| %>
-<%= a_matching_color.combination_color_name %>
+<%= a_matching_color.hex_combination_color %>
 <% end %>
 </p>
 
