@@ -174,7 +174,11 @@ Jumpsuit + Vests
 
   <form action="/modify_look/<%= @the_look.id %>" method="post">
 
+  <% if @the_look.garment_2 != 0 && @the_look.garment_2 != nil %>
 
+  <input type="hidden" name="query_garment_2" value="<%= @the_look.garment_2 %>">
+
+  <% else %>
 
   <label for="garment_2">Add second garment</label>
     <select class="form-select" aria-label="Default select example" name="query_garment_2">
@@ -186,6 +190,14 @@ Jumpsuit + Vests
   </option>
   <% end %>
   </select>
+  <% end %>
+
+
+  <% if @the_look.garment_3 != 0 && @the_look.garment_3 != nil %>
+
+  <input type="hidden" name="query_garment_3" value="<%= @the_look.garment_3 %>">
+
+  <% else %>
 
   <form action="/modify_look/<%= @the_look.id %>" method="post">
   <label for="garment_3">Add third garment</label>
@@ -197,7 +209,14 @@ Jumpsuit + Vests
   </option>
   <% end %>
   </select>
+  <% end %>
 
+
+  <% if @the_look.garment_4 != 0 && @the_look.garment_4 != nil %>
+
+  <input type="hidden" name="query_garment_4" value="<%= @the_look.garment_4 %>">
+
+  <% else %>
 
     <form action="/modify_look/<%= @the_look.id %>" method="post">
   <label for="garment_4">Add fourth garment</label>
@@ -209,7 +228,14 @@ Jumpsuit + Vests
   </option>
   <% end %>
   </select>
+  <% end %>
 
+
+  <% if @the_look.garment_5 != 0 && @the_look.garment_5 != nil %>
+
+  <input type="hidden" name="query_garment_5" value="<%= @the_look.garment_5 %>">
+
+  <% else %>
 
   <form action="/modify_look/<%= @the_look.id %>" method="post">
   <label for="garment_5">Add fifth garment</label>
@@ -231,46 +257,9 @@ Jumpsuit + Vests
     <input type="hidden" name="query_description" value="<%= @the_look.description %>">
 
 </div>
+<% end %>
 </form>
 
-<%# if garment_2 is selected
-
-show the picture as well
-
-else
-
-show nothing %>
-
-<%#
-
-color_garment = garment_1.fetch("hex_code")
-
-type_garment = garment_1.fetch("type")
-
-if
-
-garment 1 is type and color, show
-
-matches of type and color
-
-else
-
-hide
-
-if garment 1 and 2 are
-
-type 1 color 1 type 2 color 2
-
-show combinations
-
-else 
-
-hide
-
-
-
-
- %>
 
 <div>
   <div>

@@ -3,6 +3,13 @@
 <h1><%= @current_user.first_name.capitalize %>'s looks</h1>
 
 <hr>
+<form action="/garments">
+<button type="button" class="btn btn-primary">
+        Create new Look
+</button>
+<%# redirect to garments with a notice => select a garment to create a look %>
+<hr>
+
 <div>
   <div>
     <table border="1">
@@ -31,7 +38,7 @@
       <tr>
 
         <td>
-          <%= a_look.description %>
+          <%= a_look.description.capitalize %>
         </td>
 
         <td>
