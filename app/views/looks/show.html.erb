@@ -9,8 +9,43 @@ hi create a list with the records (combination colors) that match base color <% 
 <% end %>
 </p>
 
-<%# each do |a_photo| %>
-<%# end %>
+<%# next: 1) Save this hex codes; 2) Photo.all.where to find which garments have those hex codes; 3) if they have, move to validation of type, else blank (is not going to show up at suggestions) %>
+
+hi fetch garment 1 number <%= garment_1_type = @the_look.garment_1 %>
+hi look it up in Photo database <%= matching_types = Photo.where({ :id => garment_1_type }) %>
+hi hex code of G1 extracted from Photo Database <%= garment_1_type = matching_types.at(0).garment_type %>
+
+<%# next: 1) if garment_1_type == x, then show options that match x, else blank %>
+
+<%# TYPE RULES
+Bodysuit + Pants
+Bodysuit + Pants + Jackets and Coats
+Bodysuit + Pants + Vests
+Bodysuit + Shorts
+Bodysuit + Shorts + Jackets and Coats
+Bodysuit + Shorts + Vests
+Bodysuit + Skirts
+Bodysuit + Skirts + Jackets and Coats
+Bodysuit + Skirts + Vests
+Tops + Pants
+Tops + Pants + Jackets and Coats
+Tops + Pants + Vests
+Tops + Shorts
+Tops + Shorts + Jackets and Coats
+Tops + Shorts + Vests
+Tops + Skirts
+Tops + Skirts + Jackets and Coats
+Tops + Skirts + Vests
+Dress
+Jumpsuit
+Dress + Jackets and Coats
+Dress + Vests
+Jumpsuit + Jackets and Coats
+Jumpsuit + Vests
+ %>
+
+
+
 
 <%# page with a specific look %>
 <div>
