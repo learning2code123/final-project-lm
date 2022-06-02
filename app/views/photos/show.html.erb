@@ -15,10 +15,10 @@
 
     <div class="container">
       <div class="row">
-      <div class="col">
-        <img src="<%= @the_photo.image %>">
+      <div class="col-md-6">
+        <img src="<%= @the_photo.image %>" class="img-fluid">
       </div>
-    <div class="col">
+    <div class="col-md-6">
     <dl>
       <dt>
         Description
@@ -149,9 +149,7 @@
     </h2>
 
     <form action="/modify_garment/<%= @the_photo.id %>"  method="post" >
-
-
-      <div>
+      <div class="col-md-4">
         <label for="caption_box">
           Description
         </label>
@@ -163,7 +161,7 @@
         <input type="hidden" id="owner_id_box" name="query_owner_id" value="<%= @the_photo.owner_id %>">
       </div>
 
-      <div>
+      <div class="col-md-4">
           <label for="garment_type">Type</label>
         <select class="form-select" aria-label="Default select example" name="query_garment_type">
         <option selected><%= @the_photo.garment_type %></option>
@@ -174,13 +172,7 @@
       <% end %>
       </select>
     </div>
-
-
-
-
-
-
-
+    </div>
 
       <button>
         Update photo
